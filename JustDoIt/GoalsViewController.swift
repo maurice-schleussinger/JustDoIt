@@ -16,7 +16,7 @@ class GoalsViewController: UICollectionViewController {
     @IBOutlet var addGoalButton: UIBarButtonItem!
     
     private let reuseIdentifier = "GoalCell"
-    var fakeData = [1,2,3,4]
+    var fakeData: [NSNumber] = []
 
     
     override func viewDidLoad() {
@@ -35,24 +35,23 @@ class GoalsViewController: UICollectionViewController {
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        print ("numberOfSectionsInCollectionView got called")
         return 1
     }
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-                print ("cellForItemAtIndexPath got called")
         let cell: GoalCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GoalCell
         cell.CellLabel.text = String(fakeData[indexPath.row])
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
+        //        TODO: open View with details
     }
     
     @IBAction func addGoalButtonPressed(sender: AnyObject) {
 
         fakeData.append(random())
-        print(fakeData)
+        self.collectionView?.reloadData()
     }
     
 }

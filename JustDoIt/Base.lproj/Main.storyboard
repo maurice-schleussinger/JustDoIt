@@ -62,7 +62,7 @@
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" id="dBE-j6-wG9">
-                        <barButtonItem key="rightBarButtonItem" title="Add item" id="Abb-10-DIz">
+                        <barButtonItem key="rightBarButtonItem" title="Add goal" id="Abb-10-DIz">
                             <connections>
                                 <action selector="addGoalButtonPressed:" destination="7Wm-57-6DV" id="Ylu-kS-R0D"/>
                             </connections>
