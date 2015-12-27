@@ -29,25 +29,30 @@ class GoalsViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-    
-    @IBAction func addGoalPressed(sender: AnyObject) {
-    }
-    
-    
-}
 
-
-
-extension GoalsViewController {
-    
-    //1
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fakeData.count
     }
     
-    //2
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        print ("numberOfSectionsInCollectionView got called")
         return 1
     }
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+                print ("cellForItemAtIndexPath got called")
+        let cell: GoalCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GoalCell
+        cell.CellLabel.text = String(fakeData[indexPath.row])
+        return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+    }
+    
+    @IBAction func addGoalButtonPressed(sender: AnyObject) {
+
+        fakeData.append(random())
+        print(fakeData)
+    }
+    
 }

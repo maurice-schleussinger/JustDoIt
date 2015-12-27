@@ -6,66 +6,75 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Goals View Controller-->
-        <scene sceneID="kWl-Ia-vu9">
+        <!--Goals Navigation Controller-->
+        <scene sceneID="cAs-RC-IGh">
             <objects>
-                <collectionViewController id="vvw-yb-FM3" customClass="GoalsViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gcc-8h-exO">
+                <navigationController title="Goals Navigation Controller" id="DTx-Pc-xd5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Goals" image="crosshair14" id="ke9-ds-i6X"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cuW-C5-TiP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Wm-57-6DV" kind="relationship" relationship="rootViewController" id="FBZ-iV-PLd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpz-of-yKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="-829"/>
+        </scene>
+        <!--Goals View Controller-->
+        <scene sceneID="KqQ-5M-WlU">
+            <objects>
+                <collectionViewController title="Goals View Controller" id="7Wm-57-6DV" customClass="GoalsViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ROX-Is-yPa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yya-wE-ENR">
-                            <size key="itemSize" width="50" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hlm-Nz-G8b">
+                            <size key="itemSize" width="86" height="86"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5YJ-UJ-ZHf">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GoalCell" reuseIdentifier="GoalCell" id="6oZ-cQ-rTV" customClass="GoalCell" customModule="JustDoIt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="86" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrz-nd-49y">
+                                            <rect key="frame" x="0.0" y="32" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="CellLabel" destination="Jrz-nd-49y" id="Xt5-Pg-9O9"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="vvw-yb-FM3" id="spe-u4-fxq"/>
-                            <outlet property="delegate" destination="vvw-yb-FM3" id="pgx-2Y-6RP"/>
-                        </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Ray-Kn-oTK">
-                        <barButtonItem key="rightBarButtonItem" title="Add Goal" id="pLe-WB-sbe">
+                    <navigationItem key="navigationItem" id="dBE-j6-wG9">
+                        <barButtonItem key="rightBarButtonItem" title="Add item" id="Abb-10-DIz">
                             <connections>
-                                <action selector="addGoalPressed:" destination="vvw-yb-FM3" id="Gmt-zc-kvs"/>
+                                <action selector="addGoalButtonPressed:" destination="7Wm-57-6DV" id="Ylu-kS-R0D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addGoalButton" destination="pLe-WB-sbe" id="Z9c-0k-0nE"/>
+                        <outlet property="addGoalButton" destination="Abb-10-DIz" id="Up2-Pe-Vo8"/>
                     </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BDU-ck-ZSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-lC-HJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-1070"/>
-        </scene>
-        <!--Goals-->
-        <scene sceneID="kkt-0g-LsM">
-            <objects>
-                <navigationController title="Goals" id="OFN-km-5rE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Goals" image="crosshair14" id="QQD-Re-nzl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ia4-X6-mQv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vvw-yb-FM3" kind="relationship" relationship="rootViewController" id="3tK-bR-9EK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="su7-Sj-dFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="522" y="-986"/>
+            <point key="canvasLocation" x="1108" y="-829"/>
         </scene>
         <!--Gamification-->
         <scene sceneID="wg7-f3-ORb">
@@ -115,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="116"/>
+            <point key="canvasLocation" x="962" y="325"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xiY-hM-Ekc">
@@ -323,14 +332,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OFN-km-5rE" kind="relationship" relationship="viewControllers" id="SeQ-1M-SEQ"/>
+                        <segue destination="DTx-Pc-xd5" kind="relationship" relationship="viewControllers" id="thb-3e-BfE"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="SP3-rW-8Ec"/>
                         <segue destination="Vpm-sE-rWB" kind="relationship" relationship="viewControllers" id="q1v-oo-tjA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="-140"/>
+            <point key="canvasLocation" x="-465" y="7"/>
         </scene>
     </scenes>
     <resources>

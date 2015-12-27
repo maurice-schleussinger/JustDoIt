@@ -8,6 +8,6 @@
 import UIKit
 
 class GoalCell: UICollectionViewCell {
-    @IBOutlet var label: UILabel!
 
+    @IBOutlet var CellLabel: UILabel!
 }
