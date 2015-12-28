@@ -16,12 +16,38 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Wm-57-6DV" kind="relationship" relationship="rootViewController" id="FBZ-iV-PLd"/>
+                        <segue destination="7Wm-57-6DV" kind="relationship" relationship="rootViewController" id="0nf-zl-EaQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpz-of-yKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="-829"/>
+            <point key="canvasLocation" x="726" y="-841"/>
+        </scene>
+        <!--GoalDetails-->
+        <scene sceneID="SX2-eJ-gVP">
+            <objects>
+                <viewController title="GoalDetails" id="XeN-3F-zoD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0V-GD-32L"/>
+                        <viewControllerLayoutGuide type="bottom" id="JHf-mh-05X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ucF-58-RZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMb-lp-1Pl">
+                                <rect key="frame" x="288" y="317" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guy-Ew-nVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="-1872"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="KqQ-5M-WlU">
@@ -57,24 +83,106 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="CellLabel" destination="Jrz-nd-49y" id="Xt5-Pg-9O9"/>
+                                    <segue destination="XeN-3F-zoD" kind="show" id="r1G-f0-HmJ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" id="dBE-j6-wG9">
-                        <barButtonItem key="rightBarButtonItem" title="Add goal" id="Abb-10-DIz">
+                        <barButtonItem key="rightBarButtonItem" title="Add Goal" id="XbC-zl-gBi">
                             <connections>
-                                <action selector="addGoalButtonPressed:" destination="7Wm-57-6DV" id="Ylu-kS-R0D"/>
+                                <action selector="addGoalButtonPressed:" destination="7Wm-57-6DV" id="JUK-Xv-pWr"/>
+                                <segue destination="pap-6w-qJa" kind="showDetail" id="CL1-p7-TgU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="addGoalButton" destination="Abb-10-DIz" id="Up2-Pe-Vo8"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-lC-HJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="-829"/>
+            <point key="canvasLocation" x="1806" y="-1285"/>
+        </scene>
+        <!--Add Goal View Controller-->
+        <scene sceneID="WjQ-7r-clh">
+            <objects>
+                <viewController id="pap-6w-qJa" customClass="AddGoalViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tEi-2V-rul"/>
+                        <viewControllerLayoutGuide type="bottom" id="8WR-TY-KbT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yc0-eE-HBK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBg-BT-g3g">
+                                <rect key="frame" x="187" y="297" width="61" height="30"/>
+                                <state key="normal" title="Add goal"/>
+                                <connections>
+                                    <action selector="finishAddGoalButtonPressed:" destination="pap-6w-qJa" eventType="touchUpInside" id="t7M-Xw-LFL"/>
+                                    <segue destination="DTx-Pc-xd5" kind="show" id="lVV-DC-QS9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter goal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02Q-sz-HbU">
+                                <rect key="frame" x="20" y="194" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYz-0h-H48">
+                                <rect key="frame" x="21" y="243" width="122" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yM-3r-sJo">
+                                <rect key="frame" x="169" y="234" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCv-cl-MXT">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="DTx-Pc-xd5" kind="show" id="sQ2-zu-evj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oda-K1-35i">
+                                <rect key="frame" x="169" y="190" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="xnO-tw-8Vo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="02Q-sz-HbU" firstAttribute="trailing" secondItem="sYz-0h-H48" secondAttribute="trailing" constant="1" id="1jQ-5Z-uDi"/>
+                            <constraint firstItem="02Q-sz-HbU" firstAttribute="top" secondItem="tEi-2V-rul" secondAttribute="bottom" constant="174" id="5vt-Qj-lAa"/>
+                            <constraint firstItem="aCv-cl-MXT" firstAttribute="top" secondItem="tEi-2V-rul" secondAttribute="bottom" id="D2k-5g-sBM"/>
+                            <constraint firstItem="aCv-cl-MXT" firstAttribute="leading" secondItem="Yc0-eE-HBK" secondAttribute="leadingMargin" id="EVI-6b-tOq"/>
+                            <constraint firstItem="JBg-BT-g3g" firstAttribute="top" secondItem="5yM-3r-sJo" secondAttribute="bottom" constant="33" id="G8E-bb-wNY"/>
+                            <constraint firstItem="5yM-3r-sJo" firstAttribute="centerY" secondItem="sYz-0h-H48" secondAttribute="centerY" constant="-4.5" id="LE3-B4-SR8"/>
+                            <constraint firstItem="oda-K1-35i" firstAttribute="leading" secondItem="02Q-sz-HbU" secondAttribute="trailing" constant="25" id="Tzl-CY-ggf"/>
+                            <constraint firstItem="sYz-0h-H48" firstAttribute="top" secondItem="02Q-sz-HbU" secondAttribute="bottom" constant="28" id="ZbY-3k-sR0"/>
+                            <constraint firstItem="oda-K1-35i" firstAttribute="centerY" secondItem="02Q-sz-HbU" secondAttribute="centerY" id="d2n-pR-Ca4"/>
+                            <constraint firstItem="5yM-3r-sJo" firstAttribute="top" secondItem="oda-K1-35i" secondAttribute="bottom" constant="14" id="hHE-uc-hlX"/>
+                            <constraint firstItem="JBg-BT-g3g" firstAttribute="leading" secondItem="Yc0-eE-HBK" secondAttribute="leading" constant="187" id="jwR-fS-zaP"/>
+                            <constraint firstItem="5yM-3r-sJo" firstAttribute="trailing" secondItem="oda-K1-35i" secondAttribute="trailing" id="lBK-jR-xeb"/>
+                            <constraint firstItem="5yM-3r-sJo" firstAttribute="leading" secondItem="oda-K1-35i" secondAttribute="leading" id="lFH-p5-pEX"/>
+                            <constraint firstItem="02Q-sz-HbU" firstAttribute="leading" secondItem="Yc0-eE-HBK" secondAttribute="leadingMargin" id="qgU-TC-0AQ"/>
+                            <constraint firstItem="oda-K1-35i" firstAttribute="top" secondItem="tEi-2V-rul" secondAttribute="bottom" constant="170" id="xH3-wG-keB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2UU-7j-nvA"/>
+                    <connections>
+                        <outlet property="finishAddGoalButton" destination="JBg-BT-g3g" id="Agp-Or-hyR"/>
+                        <outlet property="frequencyTextField" destination="5yM-3r-sJo" id="cDu-vm-non"/>
+                        <outlet property="goalNameTextField" destination="oda-K1-35i" id="sTj-po-IsZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuH-nl-L2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="-479"/>
         </scene>
         <!--Gamification-->
         <scene sceneID="wg7-f3-ORb">
@@ -109,6 +217,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-FF-eDx">
                                 <rect key="frame" x="82" y="378" width="142" height="30"/>
                                 <state key="normal" title="Show archievements"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vy3-fr-UAr">
+                                <rect key="frame" x="167" y="452" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -348,4 +460,7 @@
         <image name="profile_picture" width="512" height="512"/>
         <image name="woman139" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lVV-DC-QS9"/>
+    </inferredMetricsTieBreakers>
 </document>

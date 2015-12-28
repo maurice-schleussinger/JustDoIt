@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import CoreData
 
 
 class GoalsViewController: UICollectionViewController {
@@ -17,12 +17,24 @@ class GoalsViewController: UICollectionViewController {
     
     private let reuseIdentifier = "GoalCell"
     var fakeData: [NSNumber] = []
-
+    var goals = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        GoalsViewController.dataSource = self
+        
+        //        Fetch existing goals from CoreData
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Goal")
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            goals = results as! [NSManagedObject]
+            print(goals)
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +43,7 @@ class GoalsViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fakeData.count
+        return goals.count
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -40,7 +52,8 @@ class GoalsViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: GoalCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GoalCell
-        cell.CellLabel.text = String(fakeData[indexPath.row])
+        cell.CellLabel.text = String(goals[indexPath.row].valueForKey("name")!)
+        print (cell.CellLabel.text)
         return cell
     }
     
@@ -48,10 +61,14 @@ class GoalsViewController: UICollectionViewController {
         //        TODO: open View with details
     }
     
-    @IBAction func addGoalButtonPressed(sender: AnyObject) {
-
-        fakeData.append(random())
-        self.collectionView?.reloadData()
-    }
-    
+//    @IBAction func addGoalButtonPressed(sender: AnyObject) {
+////        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+////        let managedContext = appDelegate.managedObjectContext
+////        
+////        let fetchRequest = NSFetchRequest(entityName: "goal")
+//
+//        goals.append(Int(random()/10000))
+//        self.collectionView?.reloadData()
+//    }
+//    
 }
