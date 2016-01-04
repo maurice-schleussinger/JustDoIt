@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */; };
 		1A6E4C1E1C2768DB004D5FB2 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E4C1D1C2768DB004D5FB2 /* GoalsViewController.swift */; };
 		1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */; };
 		1A98A5591C2F7716004EA4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A98A5571C2F7716004EA4EC /* Main.storyboard */; };
 		1A98A55D1C302479004EA4EC /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */; };
-		1A9F5EEE1C27762F005FD3D1 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F5EED1C27762F005FD3D1 /* test.swift */; };
 		1A9F5F2D1C278621005FD3D1 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F5F2C1C278621005FD3D1 /* GoalCell.swift */; };
 		1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB11711C216F3600DA3BBB /* AppDelegate.swift */; };
 		1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117A1C216F3700DA3BBB /* Assets.xcassets */; };
@@ -38,11 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		1A6E4C1D1C2768DB004D5FB2 /* GoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		1A98A5551C2F7535004EA4EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1A98A5581C2F7716004EA4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = JustDoIt/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGoalViewController.swift; path = ../AddGoalViewController.swift; sourceTree = "<group>"; };
-		1A9F5EED1C27762F005FD3D1 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		1A9F5F2C1C278621005FD3D1 /* GoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		1ADB116E1C216F3600DA3BBB /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADB11711C216F3600DA3BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,13 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */,
+				1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */,
 				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
 				1A6E4C1D1C2768DB004D5FB2 /* GoalsViewController.swift */,
 				1ADB117A1C216F3700DA3BBB /* Assets.xcassets */,
 				1A98A5571C2F7716004EA4EC /* Main.storyboard */,
 				1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */,
 				1A9F5F2C1C278621005FD3D1 /* GoalCell.swift */,
-				1A9F5EED1C27762F005FD3D1 /* test.swift */,
 				1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */,
 				1ADB117F1C216F3700DA3BBB /* Info.plist */,
 			);
@@ -271,9 +271,9 @@
 			files = (
 				1A9F5F2D1C278621005FD3D1 /* GoalCell.swift in Sources */,
 				1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */,
+				1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */,
 				1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */,
 				1A98A55D1C302479004EA4EC /* AddGoalViewController.swift in Sources */,
-				1A9F5EEE1C27762F005FD3D1 /* test.swift in Sources */,
 				1A6E4C1E1C2768DB004D5FB2 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

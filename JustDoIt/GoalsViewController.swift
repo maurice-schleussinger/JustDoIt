@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 import CoreData
+import AVFoundation
 
 
 class GoalsViewController: UICollectionViewController {
-
+    
     @IBOutlet var addGoalButton: UIBarButtonItem!
     
     private let reuseIdentifier = "GoalCell"
@@ -21,6 +22,7 @@ class GoalsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //        Fetch existing goals from CoreData
         let appDelegate =
@@ -31,7 +33,6 @@ class GoalsViewController: UICollectionViewController {
             let results =
             try managedContext.executeFetchRequest(fetchRequest)
             goals = results as! [NSManagedObject]
-            print(goals)
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -41,7 +42,7 @@ class GoalsViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goals.count
     }
@@ -53,7 +54,6 @@ class GoalsViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: GoalCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GoalCell
         cell.CellLabel.text = String(goals[indexPath.row].valueForKey("name")!)
-        print (cell.CellLabel.text)
         return cell
     }
     
@@ -61,14 +61,14 @@ class GoalsViewController: UICollectionViewController {
         //        TODO: open View with details
     }
     
-//    @IBAction func addGoalButtonPressed(sender: AnyObject) {
-////        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-////        let managedContext = appDelegate.managedObjectContext
-////        
-////        let fetchRequest = NSFetchRequest(entityName: "goal")
-//
-//        goals.append(Int(random()/10000))
-//        self.collectionView?.reloadData()
-//    }
-//    
+    //    @IBAction func addGoalButtonPressed(sender: AnyObject) {
+    ////        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    ////        let managedContext = appDelegate.managedObjectContext
+    ////        
+    ////        let fetchRequest = NSFetchRequest(entityName: "goal")
+    //
+    //        goals.append(Int(random()/10000))
+    //        self.collectionView?.reloadData()
+    //    }
+    //
 }

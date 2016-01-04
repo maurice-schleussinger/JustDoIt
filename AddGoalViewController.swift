@@ -8,14 +8,33 @@
 
 import UIKit
 import CoreData
-
+import AVFoundation
 
 class AddGoalViewController: UIViewController {
     @IBOutlet var goalNameTextField: UITextField!
     @IBOutlet var frequencyTextField: UITextField!
     @IBOutlet var finishAddGoalButton: UIButton!
     var goals = [NSManagedObject]()
-
+    
+    
+    // Code for dismissing the keyboard on tap is taken from http://stackoverflow.com/a/27079103/2175370
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(sender)
+    }
     
     @IBAction func finishAddGoalButtonPressed(sender: AnyObject) {
         let appDelegate =
@@ -36,8 +55,6 @@ class AddGoalViewController: UIViewController {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-//        TODO: Add values to database
-        print(frequencyTextField.text)
     }
     
 }
