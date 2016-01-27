@@ -7,6 +7,52 @@
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
+        <!--Goals-->
+        <scene sceneID="Xfa-wf-g3h">
+            <objects>
+                <tableViewController title="Goals" id="tIo-wS-QcE" customClass="GoalsTableViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="lbb-S8-bV1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GoalTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalTableCell" rowHeight="134" id="80N-NQ-0aw" customClass="GoalTableCell" customModule="JustDoIt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="134"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="80N-NQ-0aw" id="8Gt-IK-L5z">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="133.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bam-wI-FlE">
+                                            <rect key="frame" x="8" y="36" width="122" height="61"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CellLabel" destination="Bam-wI-FlE" id="8pO-UC-dyo"/>
+                                    <segue destination="gPz-Tz-vCL" kind="showDetail" id="DtZ-uM-mBl">
+                                        <segue key="commit" inheritsFrom="parent" id="ydW-Uo-52j"/>
+                                        <segue key="preview" inheritsFrom="commit" id="odD-5B-nYT"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tIo-wS-QcE" id="7jC-su-xGc"/>
+                            <outlet property="delegate" destination="tIo-wS-QcE" id="imt-aB-tWO"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="SsZ-Wl-6vz"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTR-fa-pNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="-2134"/>
+        </scene>
         <!--Goals Navigation Controller-->
         <scene sceneID="cAs-RC-IGh">
             <objects>
@@ -45,13 +91,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="goalNameLabel" destination="PMb-lp-1Pl" id="Qav-ol-Ret"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guy-Ew-nVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2517" y="-1872"/>
+            <point key="canvasLocation" x="3329" y="-1872"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="KqQ-5M-WlU">
@@ -61,22 +104,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hlm-Nz-G8b">
-                            <size key="itemSize" width="80" height="80"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="hlm-Nz-G8b">
+                            <size key="itemSize" width="95" height="95"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GoalCell" reuseIdentifier="GoalCell" id="6oZ-cQ-rTV" customClass="GoalCell" customModule="JustDoIt" customModuleProvider="target">
-                                <rect key="frame" x="10" y="74" width="80" height="80"/>
+                                <rect key="frame" x="10" y="74" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrz-nd-49y">
-                                            <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrz-nd-49y">
+                                            <rect key="frame" x="8" y="8" width="81" height="81"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -85,6 +128,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Jrz-nd-49y" firstAttribute="leading" secondItem="6oZ-cQ-rTV" secondAttribute="leadingMargin" id="0pO-lr-j8c"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Jrz-nd-49y" secondAttribute="trailing" constant="-2" id="HrP-V2-rhe"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Jrz-nd-49y" secondAttribute="bottom" constant="-2" id="KFs-kC-arp"/>
+                                    <constraint firstItem="Jrz-nd-49y" firstAttribute="top" secondItem="6oZ-cQ-rTV" secondAttribute="topMargin" id="xTD-ma-xmc"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="CellLabel" destination="Jrz-nd-49y" id="Xt5-Pg-9O9"/>
                                     <segue destination="XeN-3F-zoD" kind="show" id="r1G-f0-HmJ">
@@ -444,6 +493,7 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pFm-Ay-423"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -454,11 +504,61 @@
                         <segue destination="DTx-Pc-xd5" kind="relationship" relationship="viewControllers" id="thb-3e-BfE"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="SP3-rW-8Ec"/>
                         <segue destination="Vpm-sE-rWB" kind="relationship" relationship="viewControllers" id="q1v-oo-tjA"/>
+                        <segue destination="uQM-KB-qaU" kind="relationship" relationship="viewControllers" id="VcW-gz-qrY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-465" y="7"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7N3-im-1AY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uQM-KB-qaU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="or9-y2-c7h"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="EPe-cy-eTp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KL3-Wt-Won">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tIo-wS-QcE" kind="relationship" relationship="rootViewController" id="3J9-Z3-e0F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNG-q4-k14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31" y="-2106"/>
+        </scene>
+        <!--GoalDetails-->
+        <scene sceneID="5WF-UZ-u6v">
+            <objects>
+                <viewController title="GoalDetails" id="gPz-Tz-vCL" customClass="GoalDetailsViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bxa-6J-dMW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ik7-Ka-TZG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b4D-ov-uCU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uw-6l-KWC">
+                                <rect key="frame" x="111" y="240" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="goalNameLabel" destination="4uw-6l-KWC" id="MNT-kZ-W71"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a7x-Jf-FYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="-2096"/>
         </scene>
     </scenes>
     <resources>
@@ -470,5 +570,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="e13-PD-W5Y"/>
         <segue reference="r1G-f0-HmJ"/>
+        <segue reference="DtZ-uM-mBl"/>
     </inferredMetricsTieBreakers>
 </document>
