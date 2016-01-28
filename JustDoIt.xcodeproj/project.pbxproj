@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */; };
 		1A48AF2A1C5902A400D160CA /* GoalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A48AF291C5902A400D160CA /* GoalTableCell.swift */; };
+		1A4E4B311C5A3D2B00718D49 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */; };
 		1A5D72EC1C4E5D4100392F10 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */; };
 		1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */; };
 		1A98A5591C2F7716004EA4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A98A5571C2F7716004EA4EC /* Main.storyboard */; };
-		1A98A55D1C302479004EA4EC /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */; };
 		1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB11711C216F3600DA3BBB /* AppDelegate.swift */; };
 		1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117A1C216F3700DA3BBB /* Assets.xcassets */; };
 		1ADB117E1C216F3700DA3BBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */; };
@@ -40,10 +40,10 @@
 /* Begin PBXFileReference section */
 		1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		1A48AF291C5902A400D160CA /* GoalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableCell.swift; sourceTree = "<group>"; };
+		1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		1A98A5551C2F7535004EA4EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1A98A5581C2F7716004EA4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = JustDoIt/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGoalViewController.swift; path = ../AddGoalViewController.swift; sourceTree = "<group>"; };
 		1ADB116E1C216F3600DA3BBB /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADB11711C216F3600DA3BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ADB117A1C216F3700DA3BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,10 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
-				1A98A55C1C302479004EA4EC /* AddGoalViewController.swift */,
 				1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */,
 				1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */,
 				1A48AF291C5902A400D160CA /* GoalTableCell.swift */,
+				1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */,
 				1A98A5571C2F7716004EA4EC /* Main.storyboard */,
 				1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */,
 				1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */,
@@ -272,8 +272,8 @@
 				1A48AF2A1C5902A400D160CA /* GoalTableCell.swift in Sources */,
 				1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */,
 				1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */,
+				1A4E4B311C5A3D2B00718D49 /* AddGoalViewController.swift in Sources */,
 				1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */,
-				1A98A55D1C302479004EA4EC /* AddGoalViewController.swift in Sources */,
 				1A5D72EC1C4E5D4100392F10 /* GoalsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

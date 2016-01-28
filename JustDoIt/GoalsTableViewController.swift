@@ -17,9 +17,16 @@ class GoalsTableViewController : UITableViewController {
     private let reuseIdentifier = "GoalTableCell"
     var goals = [NSManagedObject]()
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
+        
+        self.tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         //        Fetch existing goals from CoreData
         let appDelegate =
@@ -43,9 +50,21 @@ class GoalsTableViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> GoalTableCell {
         let cell:GoalTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)  as! GoalTableCell
-        
-        cell.textLabel?.text = String(goals[indexPath.row].valueForKey("name")!)
+        cell.goalNameLabel.text = String(goals[indexPath.row].valueForKey("name")!)
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let archievedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (action, NSIndexPath) -> Void in
+            //            BREAK
+            //            let oldStreak = goals[indexPath.row].valueForKey("currentStreak")
+            print ("Goal archieved")
+        }
+        let skippedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Skip") { (action, NSIndexPath) -> Void in
+            print ("Goal skipped")
+        }
+        
+        return [archievedAction, skippedAction]
     }
     
     

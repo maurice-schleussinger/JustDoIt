@@ -14,6 +14,7 @@ class AddGoalViewController: UIViewController {
     @IBOutlet var goalNameTextField: UITextField!
     @IBOutlet var frequencyTextField: UITextField!
     @IBOutlet var finishAddGoalButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
     var goals = [NSManagedObject]()
     
     
@@ -36,6 +37,10 @@ class AddGoalViewController: UIViewController {
         print(sender)
     }
     
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        // dismiss the current view when cancel is pressed
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
     @IBAction func finishAddGoalButtonPressed(sender: AnyObject) {
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -50,8 +55,11 @@ class AddGoalViewController: UIViewController {
         
         do {
             try managedContext.save()
-            //5
+            print (sender)
+            //
             goals.append(goal)
+            // dismiss the current view when finish is pressed
+            self.dismissViewControllerAnimated(true, completion: {})
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }

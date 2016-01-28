@@ -13,6 +13,10 @@ import UIKit
 class GoalDetailsViewController: UIViewController {
     
     @IBOutlet var goalNameLabel: UILabel!
+    @IBOutlet var editGoalButton: UIBarButtonItem!
+    
+    @IBAction func editGoalButtonPressed(sender: AnyObject) {
+    }
     
     
 }
