@@ -1,0 +1,10 @@
+PODS:
+  - ABSteppedProgressBar (0.0.3)
+
+DEPENDENCIES:
+  - ABSteppedProgressBar (~> 0.0)
+
+SPEC CHECKSUMS:
+  ABSteppedProgressBar: 2f4f51ad45a9610f15fb696e2447482e690210c5
+
+COCOAPODS: 0.39.0

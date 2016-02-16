@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FD22059D1ECC76179E329EE5152241B /* ABSteppedProgessBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37905975D76CDD5B6477BC8218E26C4 /* ABSteppedProgessBar.swift */; };
+		466BDD61D6B45DA848EE60431CF61323 /* Pods-JustDoIt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4E852F0CD41EFBC88C560853314A /* Pods-JustDoIt-dummy.m */; };
+		49EA1E45E0B6B07283833BF7F609A255 /* ABSteppedProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0B68C2015E98ADA68A2E51163F94A6A /* ABSteppedProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D2345A1A5727793ED86841E18880453 /* ABPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042F2770E81AC75F21F37CECF103B59 /* ABPointExtension.swift */; };
+		80ED0374B75F87B6B39D6DEE32265C8A /* ABTextLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2272B41CE3C00D187D19E1789D77495 /* ABTextLayerExtension.swift */; };
+		8EB8D342390AA30317E5EAF83AC28184 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		A1F3C7CDE9D0DB9414A4D4A3C32056B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		DD522DB3976EA91307233FA84BAFC9E6 /* Pods-JustDoIt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5969172FABC12D1F612BAE68210DFB38 /* Pods-JustDoIt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE1982561BAB92A515B6B3F8B135BF42 /* ABSteppedProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 443371AE5BAD2FBA869B1E737490C452 /* ABSteppedProgressBar-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		51067CA483C73421D5BF814BDB322402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2E180613C6E640BD4792AC9ED5A3E15;
+			remoteInfo = ABSteppedProgressBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0042F2770E81AC75F21F37CECF103B59 /* ABPointExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABPointExtension.swift; path = Sources/ABPointExtension.swift; sourceTree = "<group>"; };
+		246B94E13DFECDC15CC69101447163DC /* Pods-JustDoIt-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustDoIt-resources.sh"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3F8F139F2D90488598FEBC2F996F0F7B /* Pods-JustDoIt-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustDoIt-acknowledgements.plist"; sourceTree = "<group>"; };
+		443371AE5BAD2FBA869B1E737490C452 /* ABSteppedProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABSteppedProgressBar-dummy.m"; sourceTree = "<group>"; };
+		54044B23298F05C915BCA387AF86BD2B /* Pods-JustDoIt-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustDoIt-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5969172FABC12D1F612BAE68210DFB38 /* Pods-JustDoIt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustDoIt-umbrella.h"; sourceTree = "<group>"; };
+		662450E2FB62D6B26EAF7BBCF3D7A42A /* ABSteppedProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABSteppedProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80EF50776AF9B0DC800269BA88B9BC0E /* Pods-JustDoIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustDoIt.debug.xcconfig"; sourceTree = "<group>"; };
+		9148C70CEDB60A795505931A60C318AE /* ABSteppedProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABSteppedProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		91CC2A8B791D2D41B8C00F0AFB1DCC46 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92FBC93E31979808B561C646F8836C67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A94A08465F70E34D2CD066D68E8225 /* Pods-JustDoIt-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustDoIt-frameworks.sh"; sourceTree = "<group>"; };
+		A0D9F5F33E677D954193F141B886594A /* ABSteppedProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ABSteppedProgressBar.modulemap; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C0B68C2015E98ADA68A2E51163F94A6A /* ABSteppedProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABSteppedProgressBar-umbrella.h"; sourceTree = "<group>"; };
+		C37905975D76CDD5B6477BC8218E26C4 /* ABSteppedProgessBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABSteppedProgessBar.swift; path = Sources/ABSteppedProgessBar.swift; sourceTree = "<group>"; };
+		CA16591167B307AE7A0C50480473322F /* Pods_JustDoIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDoIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D61FD3F63F630476480BD003DB68281A /* Pods-JustDoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustDoIt.release.xcconfig"; sourceTree = "<group>"; };
+		D7CD019F689CC303AABED1837FF18067 /* ABSteppedProgressBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABSteppedProgressBar.xcconfig; sourceTree = "<group>"; };
+		D81C49B32D50103F99EC5F554FE2A5BE /* Pods-JustDoIt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustDoIt.modulemap"; sourceTree = "<group>"; };
+		DCFC4E852F0CD41EFBC88C560853314A /* Pods-JustDoIt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustDoIt-dummy.m"; sourceTree = "<group>"; };
+		E2272B41CE3C00D187D19E1789D77495 /* ABTextLayerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABTextLayerExtension.swift; path = Sources/ABTextLayerExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21E66526D530DAAA9F95AE340F0BDA48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB8D342390AA30317E5EAF83AC28184 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7AF0B369E89552B6D6F6F7C851780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F3C7CDE9D0DB9414A4D4A3C32056B9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A2F8A2951A2FC551E7097428F239250 /* Pods-JustDoIt */ = {
+			isa = PBXGroup;
+			children = (
+				92FBC93E31979808B561C646F8836C67 /* Info.plist */,
+				D81C49B32D50103F99EC5F554FE2A5BE /* Pods-JustDoIt.modulemap */,
+				54044B23298F05C915BCA387AF86BD2B /* Pods-JustDoIt-acknowledgements.markdown */,
+				3F8F139F2D90488598FEBC2F996F0F7B /* Pods-JustDoIt-acknowledgements.plist */,
+				DCFC4E852F0CD41EFBC88C560853314A /* Pods-JustDoIt-dummy.m */,
+				A0A94A08465F70E34D2CD066D68E8225 /* Pods-JustDoIt-frameworks.sh */,
+				246B94E13DFECDC15CC69101447163DC /* Pods-JustDoIt-resources.sh */,
+				5969172FABC12D1F612BAE68210DFB38 /* Pods-JustDoIt-umbrella.h */,
+				80EF50776AF9B0DC800269BA88B9BC0E /* Pods-JustDoIt.debug.xcconfig */,
+				D61FD3F63F630476480BD003DB68281A /* Pods-JustDoIt.release.xcconfig */,
+			);
+			name = "Pods-JustDoIt";
+			path = "Target Support Files/Pods-JustDoIt";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				818843A2B22C930EA7F61D53E43A8E39 /* Pods */,
+				DE1D89C20E41BA861581EFB703A4F219 /* Products */,
+				CA9F00D727996CC68C5267D7FEBFCE92 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		818843A2B22C930EA7F61D53E43A8E39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4616612ACC629A85B89C50C0F62A6CC /* ABSteppedProgressBar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CA9F00D727996CC68C5267D7FEBFCE92 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A2F8A2951A2FC551E7097428F239250 /* Pods-JustDoIt */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D8C38C812F66D061A20492F3CC2842B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F5F33E677D954193F141B886594A /* ABSteppedProgressBar.modulemap */,
+				D7CD019F689CC303AABED1837FF18067 /* ABSteppedProgressBar.xcconfig */,
+				443371AE5BAD2FBA869B1E737490C452 /* ABSteppedProgressBar-dummy.m */,
+				9148C70CEDB60A795505931A60C318AE /* ABSteppedProgressBar-prefix.pch */,
+				C0B68C2015E98ADA68A2E51163F94A6A /* ABSteppedProgressBar-umbrella.h */,
+				91CC2A8B791D2D41B8C00F0AFB1DCC46 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ABSteppedProgressBar";
+			sourceTree = "<group>";
+		};
+		DE1D89C20E41BA861581EFB703A4F219 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				662450E2FB62D6B26EAF7BBCF3D7A42A /* ABSteppedProgressBar.framework */,
+				CA16591167B307AE7A0C50480473322F /* Pods_JustDoIt.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4616612ACC629A85B89C50C0F62A6CC /* ABSteppedProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				0042F2770E81AC75F21F37CECF103B59 /* ABPointExtension.swift */,
+				C37905975D76CDD5B6477BC8218E26C4 /* ABSteppedProgessBar.swift */,
+				E2272B41CE3C00D187D19E1789D77495 /* ABTextLayerExtension.swift */,
+				D8C38C812F66D061A20492F3CC2842B1 /* Support Files */,
+			);
+			path = ABSteppedProgressBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4FC0A1937623CC0B5485EB6596B23955 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD522DB3976EA91307233FA84BAFC9E6 /* Pods-JustDoIt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DA33FE5EAEE2FD7136C7E2D52FB0C06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49EA1E45E0B6B07283833BF7F609A255 /* ABSteppedProgressBar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4CF59E95FE42943349A31F3FF16A25CA /* Pods-JustDoIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21681B396B4BE456C683D620EDE27C8E /* Build configuration list for PBXNativeTarget "Pods-JustDoIt" */;
+			buildPhases = (
+				193D94E8E777210ACB32296C95EA0103 /* Sources */,
+				45B7AF0B369E89552B6D6F6F7C851780 /* Frameworks */,
+				4FC0A1937623CC0B5485EB6596B23955 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50C603A52BAE9FA7D3DEBA92A92221A /* PBXTargetDependency */,
+			);
+			name = "Pods-JustDoIt";
+			productName = "Pods-JustDoIt";
+			productReference = CA16591167B307AE7A0C50480473322F /* Pods_JustDoIt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D2E180613C6E640BD4792AC9ED5A3E15 /* ABSteppedProgressBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8920BD8EB54BDEAB5BB995EC3274BF0 /* Build configuration list for PBXNativeTarget "ABSteppedProgressBar" */;
+			buildPhases = (
+				54650BCDDC42231DF611A7F17D9B3C4C /* Sources */,
+				21E66526D530DAAA9F95AE340F0BDA48 /* Frameworks */,
+				7DA33FE5EAEE2FD7136C7E2D52FB0C06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABSteppedProgressBar;
+			productName = ABSteppedProgressBar;
+			productReference = 662450E2FB62D6B26EAF7BBCF3D7A42A /* ABSteppedProgressBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DE1D89C20E41BA861581EFB703A4F219 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2E180613C6E640BD4792AC9ED5A3E15 /* ABSteppedProgressBar */,
+				4CF59E95FE42943349A31F3FF16A25CA /* Pods-JustDoIt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		193D94E8E777210ACB32296C95EA0103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466BDD61D6B45DA848EE60431CF61323 /* Pods-JustDoIt-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54650BCDDC42231DF611A7F17D9B3C4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D2345A1A5727793ED86841E18880453 /* ABPointExtension.swift in Sources */,
+				3FD22059D1ECC76179E329EE5152241B /* ABSteppedProgessBar.swift in Sources */,
+				DE1982561BAB92A515B6B3F8B135BF42 /* ABSteppedProgressBar-dummy.m in Sources */,
+				80ED0374B75F87B6B39D6DEE32265C8A /* ABTextLayerExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A50C603A52BAE9FA7D3DEBA92A92221A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABSteppedProgressBar;
+			target = D2E180613C6E640BD4792AC9ED5A3E15 /* ABSteppedProgressBar */;
+			targetProxy = 51067CA483C73421D5BF814BDB322402 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3E5B48DEE260BC69799E604993F5856C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CD019F689CC303AABED1837FF18067 /* ABSteppedProgressBar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ABSteppedProgressBar/ABSteppedProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ABSteppedProgressBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ABSteppedProgressBar/ABSteppedProgressBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ABSteppedProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5A725EA18F0437D1BAFE4496F892B5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80EF50776AF9B0DC800269BA88B9BC0E /* Pods-JustDoIt.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustDoIt/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustDoIt/Pods-JustDoIt.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_JustDoIt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D562878D21603FECCA4E70A557BF8DF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D61FD3F63F630476480BD003DB68281A /* Pods-JustDoIt.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustDoIt/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustDoIt/Pods-JustDoIt.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_JustDoIt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E43846B588E1892F3093F3B7082B6DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC73B3AEF0255413D50D3B444A48BA70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CD019F689CC303AABED1837FF18067 /* ABSteppedProgressBar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ABSteppedProgressBar/ABSteppedProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ABSteppedProgressBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ABSteppedProgressBar/ABSteppedProgressBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ABSteppedProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21681B396B4BE456C683D620EDE27C8E /* Build configuration list for PBXNativeTarget "Pods-JustDoIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A725EA18F0437D1BAFE4496F892B5CB /* Debug */,
+				D562878D21603FECCA4E70A557BF8DF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */,
+				E43846B588E1892F3093F3B7082B6DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8920BD8EB54BDEAB5BB995EC3274BF0 /* Build configuration list for PBXNativeTarget "ABSteppedProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC73B3AEF0255413D50D3B444A48BA70 /* Debug */,
+				3E5B48DEE260BC69799E604993F5856C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
