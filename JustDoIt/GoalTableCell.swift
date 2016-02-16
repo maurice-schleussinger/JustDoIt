@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import ABSteppedProgressBar
 
 class GoalTableCell: UITableViewCell {
     
     @IBOutlet var goalNameLabel: UILabel!
-
+    
+    @IBOutlet var progressCounter: ABSteppedProgressBar!
     @IBOutlet var streakCountLabel: UILabel!
-    @IBOutlet var streakProgressView: UIView!
+    @IBOutlet var streakProgressView: UIProgressView!
+    
 }
