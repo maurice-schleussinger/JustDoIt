@@ -16,35 +16,36 @@ class GoalsTableViewController : UITableViewController {
     
     private let reuseIdentifier = "GoalTableCell"
     var goals = [NSManagedObject]()
-    var managedContext = NSManagedObjectContext()
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(false)
-        self.tableView.reloadData()
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //        Fetch existing goals from CoreData
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        self.managedContext = appDelegate.managedObjectContext
+    override func viewDidAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Goal")
+        
         do {
-            let results =
-            try managedContext.executeFetchRequest(fetchRequest)
+            
+            let results = try managedContext.executeFetchRequest(fetchRequest)
             goals = results as! [NSManagedObject]
+            self.tableView.reloadData()
+            
+            
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    
     func saveChanges(){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
         do {
-            try self.managedContext.save()
+            try managedContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -84,7 +85,6 @@ class GoalsTableViewController : UITableViewController {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let archievedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (action, NSIndexPath) -> Void in
-            
             
             let goal = self.goals[indexPath.row]
             var currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).shortValue

@@ -42,12 +42,12 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 1 {
-
-        return frequencyTypes.count
+            
+            return frequencyTypes.count
         }
         else {
             return frequencyNumbers.count
-    }
+        }
     }
     
     
@@ -63,14 +63,14 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 1 {
-
-        frequencyTypeTextField.text = frequencyTypes[row]
+            
+            frequencyTypeTextField.text = frequencyTypes[row]
         }
         else{
             frequencyTextField.text = "\(frequencyNumbers[row])"
             
         }
-
+        
     }
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -105,12 +105,10 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let goal = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         goal.setValue(goalNameTextField.text, forKey: "name")
-        
         do {
-            try managedContext.save()
-            print (sender)
-            //
             goals.append(goal)
+            try managedContext.save()
+            //
             // dismiss the current view when finish is pressed
             self.dismissViewControllerAnimated(true, completion: {})
         } catch let error as NSError  {
