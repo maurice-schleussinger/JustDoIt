@@ -13,7 +13,7 @@
         <scene sceneID="Xfa-wf-g3h">
             <objects>
                 <tableViewController title="Goals" id="tIo-wS-QcE" customClass="GoalsTableViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="lbb-S8-bV1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="lbb-S8-bV1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,7 +21,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GoalTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalTableCell" rowHeight="134" id="80N-NQ-0aw" customClass="GoalTableCell" customModule="JustDoIt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="80N-NQ-0aw" id="8Gt-IK-L5z">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" tableViewCell="80N-NQ-0aw" id="8Gt-IK-L5z">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="133.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -33,41 +33,32 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-lq-abo">
                                             <rect key="frame" x="8" y="8" width="66" height="84"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="66" id="k2O-HK-RBV"/>
+                                                <constraint firstAttribute="width" constant="66" id="hwx-Hw-Hqs"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="aZD-7p-xoZ">
-                                            <rect key="frame" x="8" y="100" width="584" height="2"/>
+                                        <progressView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KDb-XK-y0j">
+                                            <rect key="frame" x="8" y="77" width="584" height="2"/>
                                         </progressView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRk-FN-IA8" customClass="ABSteppedProgressBar" customModule="ABSteppedProgressBar">
-                                            <rect key="frame" x="261" y="33" width="175" height="33"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ceq-lq-abo" firstAttribute="leading" secondItem="aZD-7p-xoZ" secondAttribute="leading" id="3ja-vh-Qs9"/>
-                                        <constraint firstItem="ceq-lq-abo" firstAttribute="firstBaseline" secondItem="Bam-wI-FlE" secondAttribute="firstBaseline" id="44I-QD-Aq9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="aZD-7p-xoZ" secondAttribute="bottom" constant="23.5" id="6yH-V7-RPU"/>
-                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="baseline" secondItem="ceq-lq-abo" secondAttribute="baseline" id="8L5-qS-32o"/>
-                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="trailing" secondItem="8Gt-IK-L5z" secondAttribute="trailingMargin" id="AxT-mL-amf"/>
-                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="leading" secondItem="ceq-lq-abo" secondAttribute="trailing" constant="31" id="B1Y-b6-0mZ"/>
-                                        <constraint firstItem="aZD-7p-xoZ" firstAttribute="trailing" secondItem="Bam-wI-FlE" secondAttribute="trailing" id="Jmn-B5-d0c"/>
-                                        <constraint firstAttribute="trailing" secondItem="YRk-FN-IA8" secondAttribute="trailing" constant="164" id="VZK-ct-kZC"/>
-                                        <constraint firstItem="YRk-FN-IA8" firstAttribute="leading" secondItem="8Gt-IK-L5z" secondAttribute="leading" constant="261" id="aq5-R0-SD6"/>
-                                        <constraint firstItem="ceq-lq-abo" firstAttribute="leading" secondItem="8Gt-IK-L5z" secondAttribute="leadingMargin" id="h5y-au-mTQ"/>
-                                        <constraint firstItem="aZD-7p-xoZ" firstAttribute="top" secondItem="YRk-FN-IA8" secondAttribute="bottom" constant="34" id="oJR-nF-BJ2"/>
-                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="top" secondItem="8Gt-IK-L5z" secondAttribute="topMargin" id="woD-KB-VNV"/>
-                                        <constraint firstItem="aZD-7p-xoZ" firstAttribute="top" secondItem="ceq-lq-abo" secondAttribute="bottom" constant="8" symbolic="YES" id="xbl-4a-J6Q"/>
-                                        <constraint firstItem="YRk-FN-IA8" firstAttribute="centerY" secondItem="ceq-lq-abo" secondAttribute="centerY" id="yua-Fv-WHe"/>
+                                        <constraint firstItem="ceq-lq-abo" firstAttribute="top" secondItem="8Gt-IK-L5z" secondAttribute="topMargin" id="52c-b3-3Eb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KDb-XK-y0j" secondAttribute="bottom" constant="46.5" id="7CR-Aq-Gbo"/>
+                                        <constraint firstItem="KDb-XK-y0j" firstAttribute="leading" secondItem="8Gt-IK-L5z" secondAttribute="leadingMargin" id="GBZ-hg-DC2"/>
+                                        <constraint firstItem="ceq-lq-abo" firstAttribute="firstBaseline" secondItem="Bam-wI-FlE" secondAttribute="firstBaseline" id="MQR-1C-eYO"/>
+                                        <constraint firstItem="KDb-XK-y0j" firstAttribute="top" secondItem="ceq-lq-abo" secondAttribute="bottom" constant="-15" id="P1p-5g-cpJ"/>
+                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="trailing" secondItem="8Gt-IK-L5z" secondAttribute="trailingMargin" id="UGF-zS-hGe"/>
+                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="baseline" secondItem="ceq-lq-abo" secondAttribute="baseline" id="e0P-X2-RSN"/>
+                                        <constraint firstItem="Bam-wI-FlE" firstAttribute="leading" secondItem="ceq-lq-abo" secondAttribute="trailing" constant="31" id="oih-UP-toW"/>
+                                        <constraint firstItem="KDb-XK-y0j" firstAttribute="leading" secondItem="ceq-lq-abo" secondAttribute="leading" id="rmO-As-sN8"/>
+                                        <constraint firstItem="KDb-XK-y0j" firstAttribute="trailing" secondItem="Bam-wI-FlE" secondAttribute="trailing" id="uTR-QA-Cux"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="goalNameLabel" destination="Bam-wI-FlE" id="trp-QH-3hM"/>
-                                    <outlet property="progressCounter" destination="YRk-FN-IA8" id="vDD-NH-dBC"/>
                                     <outlet property="streakCountLabel" destination="ceq-lq-abo" id="iWW-ZQ-dIR"/>
-                                    <outlet property="streakProgressView" destination="8Gt-IK-L5z" id="hCj-t4-aPB"/>
+                                    <outlet property="streakProgressView" destination="KDb-XK-y0j" id="AhN-vN-ell"/>
                                     <segue destination="gPz-Tz-vCL" kind="show" id="Gff-kj-H6V">
                                         <segue key="commit" inheritsFrom="parent" id="NDM-9Z-tJo"/>
                                         <segue key="preview" inheritsFrom="commit" id="yRb-GY-btg"/>
@@ -597,6 +588,6 @@
         <image name="woman139" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yRb-GY-btg"/>
+        <segue reference="Gff-kj-H6V"/>
     </inferredMetricsTieBreakers>
 </document>

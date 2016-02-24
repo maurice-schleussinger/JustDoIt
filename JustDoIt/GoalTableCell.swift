@@ -14,8 +14,7 @@ class GoalTableCell: UITableViewCell {
     
     @IBOutlet var goalNameLabel: UILabel!
     
-    @IBOutlet var progressCounter: ABSteppedProgressBar!
-    @IBOutlet var streakCountLabel: UILabel!
     @IBOutlet var streakProgressView: UIProgressView!
+    @IBOutlet var streakCountLabel: UILabel!
     
 }

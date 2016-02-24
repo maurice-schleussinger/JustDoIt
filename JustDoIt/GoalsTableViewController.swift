@@ -18,24 +18,27 @@ class GoalsTableViewController : UITableViewController {
     var goals = [NSManagedObject]()
     
     override func viewDidAppear(animated: Bool) {
+        //        get the appDelegate and create a local managedObjectContext
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Goal")
         
         do {
-            
+            //            try to get existing goals from the database
             let results = try managedContext.executeFetchRequest(fetchRequest)
             goals = results as! [NSManagedObject]
             self.tableView.reloadData()
             
             
         } catch let error as NSError {
+            //            should not happen at all
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
     }
     
     override func viewDidLoad() {
+        //        call parent func
         super.viewDidLoad()
         
     }
@@ -57,25 +60,26 @@ class GoalsTableViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> GoalTableCell {
+        //        create a cell
         let cell:GoalTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)  as! GoalTableCell
         let goal = self.goals[indexPath.row]
         let goalName = String(goal.valueForKey("name")!)
+        //        set cell label to goal name
         cell.goalNameLabel.text = goalName
         print("goalName: \(goalName)")
-        
+        //        set values for cell streak
         let currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).floatValue
         let bestStreak = (goal.valueForKey("bestStreak")! as! NSNumber).floatValue
         print("  currentStreak: \(currentStreak)")
         print("  bestStreak: \(bestStreak)")
+        cell.streakCountLabel.text = String("\(Int(currentStreak))")
         
         let percentValue = (currentStreak/bestStreak)
         print("  percentValue: \(percentValue)")
         print("")
-        //        cell.streakProgressView.hidden = true
-        //        cell.progressCounter.numberOfPoints = 5
-        //        cell.streakCountLabel.hidden = false
-        //        cell.streakProgressView.setProgress(0.5, animated: false)
-        cell.streakCountLabel.text = String("\(Int(currentStreak))")
+        print(cell.streakProgressView)
+        cell.streakProgressView.setProgress(percentValue, animated: false)
+        
         
         return cell
     }
