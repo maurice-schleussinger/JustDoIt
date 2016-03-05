@@ -105,6 +105,9 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let goal = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         goal.setValue(goalNameTextField.text, forKey: "name")
+        goal.setValue(frequencyTypeTextField.text as String!, forKey: "frequencyType")
+        goal.setValue(Int(frequencyTextField.text!) , forKey: "frequencyValue")
+        goal.setValue(NSDate(), forKey: "lastAchieved")
         do {
             goals.append(goal)
             try managedContext.save()

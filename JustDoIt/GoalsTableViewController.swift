@@ -43,6 +43,24 @@ class GoalsTableViewController : UITableViewController {
         
     }
     
+    //    use prepareForeSegue to pass the calling Cell to the GoalDetailsViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //        check if the correct segue is called
+        if segue.identifier == "ShowGoalDetail" {
+            //            get reference to GoalDetailsViewController
+            let goalDetailViewController = segue.destinationViewController as! GoalDetailsViewController
+            if let selectedGoalCell = sender as? GoalTableCell {
+                let indexPath = tableView.indexPathForCell(selectedGoalCell)!
+                let selectedGoal = goals[indexPath.row]
+                //                pass the goal of the corresponding cell
+                goalDetailViewController.goal = selectedGoal
+                
+                
+                
+            }
+            
+        }
+    }
     
     func saveChanges(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -58,7 +76,7 @@ class GoalsTableViewController : UITableViewController {
         return goals.count
         
     }
-    
+    //    cellForRowAtIndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> GoalTableCell {
         //        create a cell
         let cell:GoalTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)  as! GoalTableCell
@@ -70,14 +88,15 @@ class GoalsTableViewController : UITableViewController {
         //        set values for cell streak
         let currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).floatValue
         let bestStreak = (goal.valueForKey("bestStreak")! as! NSNumber).floatValue
+        cell.lastAchievedLabel.text = String(goal.valueForKey("lastAchieved"))
         print("  currentStreak: \(currentStreak)")
         print("  bestStreak: \(bestStreak)")
+        print("  frequencyType:\(goal.valueForKey("frequencyType"))")
+        print("  frequencyValue:\(goal.valueForKey("frequencyValue"))")
         cell.streakCountLabel.text = String("\(Int(currentStreak))")
         
         let percentValue = (currentStreak/bestStreak)
         print("  percentValue: \(percentValue)")
-        print("")
-        print(cell.streakProgressView)
         cell.streakProgressView.setProgress(percentValue, animated: false)
         
         
@@ -101,6 +120,7 @@ class GoalsTableViewController : UITableViewController {
                 goal.setValue(NSNumber(short: currentStreak), forKey: "bestStreak")
                 
             }
+            goal.setValue(NSDate(), forKey: "lastAchieved")
             goal.setValue(NSNumber(short: currentStreak), forKey: "currentStreak")
             self.saveChanges()
             

@@ -3,9 +3,12 @@
     <entity name="Goal" syncable="YES">
         <attribute name="bestStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="currentStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencyType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="frequencyValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastAchieved" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goal" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
