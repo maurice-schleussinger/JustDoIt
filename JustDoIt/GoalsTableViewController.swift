@@ -14,7 +14,7 @@ import AVFoundation
 
 class GoalsTableViewController : UITableViewController {
     
-    private let reuseIdentifier = "GoalTableCell"
+    let reuseIdentifier = "GoalTableCell"
     var goals = [NSManagedObject]()
     
     override func viewDidAppear(animated: Bool) {
@@ -22,9 +22,11 @@ class GoalsTableViewController : UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Goal")
+        let sortDescriptor = NSSortDescriptor(key: "nextDue", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
-            //            try to get existing goals from the database
+            // try to get existing goals from the database
             let results = try managedContext.executeFetchRequest(fetchRequest)
             goals = results as! [NSManagedObject]
             self.tableView.reloadData()
@@ -54,11 +56,7 @@ class GoalsTableViewController : UITableViewController {
                 let selectedGoal = goals[indexPath.row]
                 //                pass the goal of the corresponding cell
                 goalDetailViewController.goal = selectedGoal
-                
-                
-                
             }
-            
         }
     }
     
@@ -88,7 +86,42 @@ class GoalsTableViewController : UITableViewController {
         //        set values for cell streak
         let currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).floatValue
         let bestStreak = (goal.valueForKey("bestStreak")! as! NSNumber).floatValue
-        cell.lastAchievedLabel.text = String(goal.valueForKey("lastAchieved"))
+        
+        let calendar = NSCalendar.currentCalendar()
+        let nextDue = goal.valueForKey("nextDue") as! NSDate
+        let formatter = NSDateFormatter()
+        var nextDueString  = ""
+        let dayInSeconds = Double(86400)
+        let weekInSeconds = dayInSeconds * 7
+        let oneWeekAhead = NSDate(timeIntervalSinceNow: weekInSeconds)
+        
+        if calendar.compareDate(nextDue, toDate: NSDate(), toUnitGranularity: .Day)  == NSComparisonResult.OrderedAscending{
+            nextDueString = "some time ago!!"
+        }
+        else if calendar.isDateInToday(nextDue){
+            nextDueString = "Today!"
+            
+        }
+        else if calendar.isDateInTomorrow(nextDue){
+            nextDueString = "Tomorrow"
+        }
+        else if calendar.compareDate(nextDue, toDate: oneWeekAhead, toUnitGranularity: .Minute)  == NSComparisonResult.OrderedAscending{
+            formatter.dateFormat = "EEEE"
+            nextDueString = formatter.stringFromDate(nextDue)
+            
+        }
+        else {
+            formatter.dateFormat = "dd.MM at HH:MM"
+            
+            nextDueString = formatter.stringFromDate(nextDue)
+            print(nextDueString)
+            
+        }
+        
+        
+        
+        cell.nextDueLabel.text = "Next due to \(nextDueString)"
+        
         print("  currentStreak: \(currentStreak)")
         print("  bestStreak: \(bestStreak)")
         print("  frequencyType:\(goal.valueForKey("frequencyType"))")
@@ -107,7 +140,7 @@ class GoalsTableViewController : UITableViewController {
     //#### EDIT ACTIONS FOR TABLE CELLS
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        let archievedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (action, NSIndexPath) -> Void in
+        let archievedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal ,title: "Done") { (action, NSIndexPath) -> Void in
             
             let goal = self.goals[indexPath.row]
             var currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).shortValue
@@ -121,14 +154,34 @@ class GoalsTableViewController : UITableViewController {
                 
             }
             goal.setValue(NSDate(), forKey: "lastAchieved")
+            goal.setValue(NSDate(), forKey: "nextDue")
             goal.setValue(NSNumber(short: currentStreak), forKey: "currentStreak")
+            let dayInSeconds = 86400
+            let frequency = goal.valueForKey("frequencyValue") as! Int
+            let frequencyType = goal.valueForKey("frequencyType")! as! String
+            
+            //            calculate nextDue based on frequency and frequencyType
+            switch frequencyType {
+            case "day":
+                goal.setValue(NSDate(timeIntervalSinceNow: Double(dayInSeconds / frequency)), forKey: "nextDue")
+            case "week":
+                goal.setValue(NSDate(timeIntervalSinceNow: Double((dayInSeconds * 7) / frequency)), forKey: "nextDue")
+            case "month":
+                goal.setValue(NSDate(timeIntervalSinceNow: Double(dayInSeconds * 30 / frequency)), forKey: "NextDue")
+            default: break
+                
+            }
+            
             self.saveChanges()
             
             
             print ("Goal archieved, streak counter incremented by +1.")
             self.tableView.reloadData()
         }
-        let skippedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Skip") { (action, NSIndexPath) -> Void in
+        //        change the color of the action to green
+        archievedAction.backgroundColor = [#Color(colorLiteralRed: 0.2941176471, green: 0.8588235294, blue: 0.3607843137, alpha: 1)#]
+        
+        let skippedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Skip") { (action, NSIndexPath) -> Void in
             // maybe ask the user before breaking the streak
             let goal = self.goals[indexPath.row]
             //            reset the streak counter if the goal is skipped

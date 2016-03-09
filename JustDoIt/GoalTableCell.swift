@@ -12,8 +12,7 @@ import UIKit
 class GoalTableCell: UITableViewCell {
     
     @IBOutlet var goalNameLabel: UILabel!
-    
-    @IBOutlet var lastAchievedLabel: UILabel!
+    @IBOutlet var nextDueLabel: UILabel!
     @IBOutlet var streakProgressView: UIProgressView!
     @IBOutlet var streakCountLabel: UILabel!
     

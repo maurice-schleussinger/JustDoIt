@@ -10,67 +10,28 @@ import UIKit
 import CoreData
 import AVFoundation
 
-class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {    
     @IBOutlet var goalNameTextField: UITextField!
-    @IBOutlet var frequencyTextField: UITextField!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    @IBOutlet var goalCategoryPicker: UIPickerView!
     
-    @IBOutlet var frequencyTypeTextField: UITextField!
-    @IBOutlet var frequencyTypePicker: UIPickerView!
-    
-    @IBOutlet var finishAddGoalButton: UIButton!
-    @IBOutlet var cancelButton: UIButton!
     var goals = [NSManagedObject]()
     
-    var frequencyTypes = ["day","week","month"]
-    var frequencyNumbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
+    // define some constants for avaiable frequency types and values
+    let frequencyTypes = ["day","week","month"]
+    let frequencyValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
+    let dayInSeconds = Double(86400)
+    let goalCategories = ["Sport", "Household", "Social"]
     
     
-    // Code for dismissing the keyboard on tap is taken from http://stackoverflow.com/a/27079103/2175370
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.frequencyTypePicker.dataSource = self;
-        self.frequencyTypePicker.delegate = self;
-        
-        //Looks for single or multiple taps.
+        self.goalCategoryPicker.dataSource = self;
+        self.goalCategoryPicker.delegate = self;
+        // Code for dismissing the keyboard on tap is taken from http://stackoverflow.com/a/27079103/2175370
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 1 {
-            
-            return frequencyTypes.count
-        }
-        else {
-            return frequencyNumbers.count
-        }
-    }
-    
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 1 {
-            return frequencyTypes[row]
-        }
-        else{
-            return "\(frequencyNumbers[row])"
-        }
-        
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 1 {
-            
-            frequencyTypeTextField.text = frequencyTypes[row]
-        }
-        else{
-            frequencyTextField.text = "\(frequencyNumbers[row])"
-            
-        }
-        
     }
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -78,45 +39,38 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         view.endEditing(true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(sender)
+    
+    // the UIPickerView has 1 component
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
+    // return the corresponding array count for component 1 or 2 (frequency type or value)
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return goalCategories.count
+    }
+    
+    // return the corresponding array value for component 1 or 2 (frequency type or value)
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(goalCategories[row])"
+        
+    }
+    
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         // dismiss the current view when cancel is pressed
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-    
-    @IBAction func frequencyTypeFocused(sender: AnyObject) {
-        print("frequencyTypeFocused")
-        
-        
-    }
-    
-    @IBAction func finishAddGoalButtonPressed(sender: AnyObject) {
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        let entity =  NSEntityDescription.entityForName("Goal",
-            inManagedObjectContext:managedContext)
-        
-        let goal = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext: managedContext)
-        goal.setValue(goalNameTextField.text, forKey: "name")
-        goal.setValue(frequencyTypeTextField.text as String!, forKey: "frequencyType")
-        goal.setValue(Int(frequencyTextField.text!) , forKey: "frequencyValue")
-        goal.setValue(NSDate(), forKey: "lastAchieved")
-        do {
-            goals.append(goal)
-            try managedContext.save()
-            //
-            // dismiss the current view when finish is pressed
-            self.dismissViewControllerAnimated(true, completion: {})
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+    //    use prepareForeSegue to pass the calling Cell to the GoalDetailsViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //        check if the correct segue is called
+        if segue.identifier == "AddGoalStep2" {
+            //            get reference to GoalDetailsViewController
+            let finishAddGoalViewController = segue.destinationViewController as! FinishAddGoalViewController
+            finishAddGoalViewController.goalName = goalNameTextField.text!
         }
     }
+    
+    
     
 }

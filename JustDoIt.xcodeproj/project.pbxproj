@@ -13,6 +13,15 @@
 		1A5D72EC1C4E5D4100392F10 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */; };
 		1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */; };
 		1A98A5591C2F7716004EA4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A98A5571C2F7716004EA4EC /* Main.storyboard */; };
+		1AAC09891C8F384800D9C112 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC09871C8F384800D9C112 /* Interface.storyboard */; };
+		1AAC098B1C8F384800D9C112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC098A1C8F384800D9C112 /* Assets.xcassets */; };
+		1AAC09921C8F384900D9C112 /* JustDoItWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1AAC09911C8F384900D9C112 /* JustDoItWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1AAC09991C8F384900D9C112 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC09981C8F384900D9C112 /* InterfaceController.swift */; };
+		1AAC099B1C8F384900D9C112 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC099A1C8F384900D9C112 /* ExtensionDelegate.swift */; };
+		1AAC099D1C8F384900D9C112 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC099C1C8F384900D9C112 /* NotificationController.swift */; };
+		1AAC099F1C8F384900D9C112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC099E1C8F384900D9C112 /* Assets.xcassets */; };
+		1AAC09A31C8F384900D9C112 /* JustDoItWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1AAC09851C8F384800D9C112 /* JustDoItWatch.app */; };
+		1AAC09AD1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */; };
 		1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB11711C216F3600DA3BBB /* AppDelegate.swift */; };
 		1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117A1C216F3700DA3BBB /* Assets.xcassets */; };
 		1ADB117E1C216F3700DA3BBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */; };
@@ -22,6 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1AAC09931C8F384900D9C112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ADB11661C216F3600DA3BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AAC09901C8F384900D9C112;
+			remoteInfo = "JustDoItWatch Extension";
+		};
+		1AAC09A11C8F384900D9C112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ADB11661C216F3600DA3BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AAC09841C8F384800D9C112;
+			remoteInfo = JustDoItWatch;
+		};
 		1ADB11851C216F3700DA3BBB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1ADB11661C216F3600DA3BBB /* Project object */;
@@ -38,6 +61,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1AAC09A91C8F384900D9C112 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1AAC09921C8F384900D9C112 /* JustDoItWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAC09AB1C8F384900D9C112 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1AAC09A31C8F384900D9C112 /* JustDoItWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		1A48AF291C5902A400D160CA /* GoalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableCell.swift; sourceTree = "<group>"; };
@@ -45,6 +93,18 @@
 		1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		1A98A5551C2F7535004EA4EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1A98A5581C2F7716004EA4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = JustDoIt/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AAC09851C8F384800D9C112 /* JustDoItWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoItWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAC09881C8F384800D9C112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1AAC098A1C8F384800D9C112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AAC098C1C8F384800D9C112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAC09911C8F384900D9C112 /* JustDoItWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "JustDoItWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAC09971C8F384900D9C112 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		1AAC09981C8F384900D9C112 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1AAC099A1C8F384900D9C112 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1AAC099C1C8F384900D9C112 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		1AAC099E1C8F384900D9C112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AAC09A01C8F384900D9C112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishAddGoalsTableViewController.swift; sourceTree = "<group>"; };
 		1ADB116E1C216F3600DA3BBB /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADB11711C216F3600DA3BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ADB117A1C216F3700DA3BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +122,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1AAC098E1C8F384900D9C112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADB116B1C216F3600DA3BBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,12 +154,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AAC09861C8F384800D9C112 /* JustDoItWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC09871C8F384800D9C112 /* Interface.storyboard */,
+				1AAC098A1C8F384800D9C112 /* Assets.xcassets */,
+				1AAC098C1C8F384800D9C112 /* Info.plist */,
+			);
+			path = JustDoItWatch;
+			sourceTree = "<group>";
+		};
+		1AAC09951C8F384900D9C112 /* JustDoItWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC09981C8F384900D9C112 /* InterfaceController.swift */,
+				1AAC099A1C8F384900D9C112 /* ExtensionDelegate.swift */,
+				1AAC099C1C8F384900D9C112 /* NotificationController.swift */,
+				1AAC099E1C8F384900D9C112 /* Assets.xcassets */,
+				1AAC09A01C8F384900D9C112 /* Info.plist */,
+				1AAC09961C8F384900D9C112 /* Supporting Files */,
+			);
+			path = "JustDoItWatch Extension";
+			sourceTree = "<group>";
+		};
+		1AAC09961C8F384900D9C112 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC09971C8F384900D9C112 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1ADB11651C216F3600DA3BBB = {
 			isa = PBXGroup;
 			children = (
 				1ADB11701C216F3600DA3BBB /* JustDoIt */,
 				1ADB11871C216F3700DA3BBB /* JustDoItTests */,
 				1ADB11921C216F3700DA3BBB /* JustDoItUITests */,
+				1AAC09861C8F384800D9C112 /* JustDoItWatch */,
+				1AAC09951C8F384900D9C112 /* JustDoItWatch Extension */,
 				1ADB116F1C216F3600DA3BBB /* Products */,
 				4DC7808AE374632132EF5369 /* Pods */,
 				80B43760C6766A108D084C36 /* Frameworks */,
@@ -105,6 +205,8 @@
 				1ADB116E1C216F3600DA3BBB /* JustDoIt.app */,
 				1ADB11841C216F3700DA3BBB /* JustDoItTests.xctest */,
 				1ADB118F1C216F3700DA3BBB /* JustDoItUITests.xctest */,
+				1AAC09851C8F384800D9C112 /* JustDoItWatch.app */,
+				1AAC09911C8F384900D9C112 /* JustDoItWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +216,7 @@
 			children = (
 				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
 				1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */,
+				1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */,
 				1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */,
 				1A48AF291C5902A400D160CA /* GoalTableCell.swift */,
 				1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */,
@@ -164,6 +267,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1AAC09841C8F384800D9C112 /* JustDoItWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAC09AA1C8F384900D9C112 /* Build configuration list for PBXNativeTarget "JustDoItWatch" */;
+			buildPhases = (
+				1AAC09831C8F384800D9C112 /* Resources */,
+				1AAC09A91C8F384900D9C112 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AAC09941C8F384900D9C112 /* PBXTargetDependency */,
+			);
+			name = JustDoItWatch;
+			productName = JustDoItWatch;
+			productReference = 1AAC09851C8F384800D9C112 /* JustDoItWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1AAC09901C8F384900D9C112 /* JustDoItWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAC09A81C8F384900D9C112 /* Build configuration list for PBXNativeTarget "JustDoItWatch Extension" */;
+			buildPhases = (
+				1AAC098D1C8F384900D9C112 /* Sources */,
+				1AAC098E1C8F384900D9C112 /* Frameworks */,
+				1AAC098F1C8F384900D9C112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JustDoItWatch Extension";
+			productName = "JustDoItWatch Extension";
+			productReference = 1AAC09911C8F384900D9C112 /* JustDoItWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		1ADB116D1C216F3600DA3BBB /* JustDoIt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ADB11981C216F3700DA3BBB /* Build configuration list for PBXNativeTarget "JustDoIt" */;
@@ -174,10 +311,12 @@
 				1ADB116C1C216F3600DA3BBB /* Resources */,
 				0809078CA68A9CBE3AB88B08 /* Embed Pods Frameworks */,
 				08AAF4C9E678D21245055871 /* Copy Pods Resources */,
+				1AAC09AB1C8F384900D9C112 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1AAC09A21C8F384900D9C112 /* PBXTargetDependency */,
 			);
 			name = JustDoIt;
 			productName = JustDoIt;
@@ -226,10 +365,18 @@
 		1ADB11661C216F3600DA3BBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Some one";
 				TargetAttributes = {
+					1AAC09841C8F384800D9C112 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = K6J866Z846;
+					};
+					1AAC09901C8F384900D9C112 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = K6J866Z846;
+					};
 					1ADB116D1C216F3600DA3BBB = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = K6J866Z846;
@@ -260,11 +407,30 @@
 				1ADB116D1C216F3600DA3BBB /* JustDoIt */,
 				1ADB11831C216F3700DA3BBB /* JustDoItTests */,
 				1ADB118E1C216F3700DA3BBB /* JustDoItUITests */,
+				1AAC09841C8F384800D9C112 /* JustDoItWatch */,
+				1AAC09901C8F384900D9C112 /* JustDoItWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1AAC09831C8F384800D9C112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAC098B1C8F384800D9C112 /* Assets.xcassets in Resources */,
+				1AAC09891C8F384800D9C112 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAC098F1C8F384900D9C112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAC099F1C8F384900D9C112 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADB116C1C216F3600DA3BBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +506,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1AAC098D1C8F384900D9C112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAC099D1C8F384900D9C112 /* NotificationController.swift in Sources */,
+				1AAC099B1C8F384900D9C112 /* ExtensionDelegate.swift in Sources */,
+				1AAC09991C8F384900D9C112 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADB116A1C216F3600DA3BBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +526,7 @@
 				1A4E4B311C5A3D2B00718D49 /* AddGoalViewController.swift in Sources */,
 				1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */,
 				1A5D72EC1C4E5D4100392F10 /* GoalsTableViewController.swift in Sources */,
+				1AAC09AD1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +549,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1AAC09941C8F384900D9C112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AAC09901C8F384900D9C112 /* JustDoItWatch Extension */;
+			targetProxy = 1AAC09931C8F384900D9C112 /* PBXContainerItemProxy */;
+		};
+		1AAC09A21C8F384900D9C112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AAC09841C8F384800D9C112 /* JustDoItWatch */;
+			targetProxy = 1AAC09A11C8F384900D9C112 /* PBXContainerItemProxy */;
+		};
 		1ADB11861C216F3700DA3BBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1ADB116D1C216F3600DA3BBB /* JustDoIt */;
@@ -394,6 +581,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		1AAC09871C8F384800D9C112 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AAC09881C8F384800D9C112 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -405,6 +600,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1AAC09A41C8F384900D9C112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = JustDoItWatch_Extension;
+				INFOPLIST_FILE = JustDoItWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = de.iosDev.JustDoIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		1AAC09A51C8F384900D9C112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = JustDoItWatch_Extension;
+				INFOPLIST_FILE = JustDoItWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = de.iosDev.JustDoIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		1AAC09A61C8F384900D9C112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "JustDoItWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.iosDev.JustDoIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		1AAC09A71C8F384900D9C112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "JustDoItWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.iosDev.JustDoIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		1ADB11961C216F3700DA3BBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +832,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1AAC09A81C8F384900D9C112 /* Build configuration list for PBXNativeTarget "JustDoItWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAC09A61C8F384900D9C112 /* Debug */,
+				1AAC09A71C8F384900D9C112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1AAC09AA1C8F384900D9C112 /* Build configuration list for PBXNativeTarget "JustDoItWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAC09A41C8F384900D9C112 /* Debug */,
+				1AAC09A51C8F384900D9C112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1ADB11691C216F3600DA3BBB /* Build configuration list for PBXProject "JustDoIt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
