@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "crosshair14.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fa-cogs_60_0_000000_none.png",
       "scale" : "2x"
     },
     {

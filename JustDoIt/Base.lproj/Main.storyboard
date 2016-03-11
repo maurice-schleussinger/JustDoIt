@@ -306,41 +306,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maxine Musterfrau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpl-MS-hyz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maxine Musterfrau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpl-MS-hyz">
                                 <rect key="frame" x="20" y="275" width="144" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fTO-B4-kfY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="500 points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-TX-Ma5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-TX-Ma5">
                                 <rect key="frame" x="21" y="313" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="D8v-Rk-VAG"/>
+                                    <constraint firstAttribute="height" constant="21" id="uLs-nP-gAZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-FF-eDx">
+                                <rect key="frame" x="82" y="378" width="142" height="30"/>
+                                <state key="normal" title="Show archievements"/>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="os8-5X-BRa">
-                                <rect key="frame" x="190" y="28" width="221" height="213"/>
+                                <rect key="frame" x="190" y="72" width="221" height="213"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="221" id="SSa-RN-VW3"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-FF-eDx">
-                                <rect key="frame" x="82" y="378" width="142" height="30"/>
-                                <state key="normal" title="Show archievements"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itc-Xr-eLN">
-                                <rect key="frame" x="20" y="20" width="32" height="31"/>
-                                <state key="normal" image="gear39"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="kj6-FF-eDx" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="62" id="0wU-zL-bnR"/>
                             <constraint firstItem="os8-5X-BRa" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" symbolic="YES" id="AcA-kU-JWh"/>
+                            <constraint firstItem="os8-5X-BRa" firstAttribute="leading" secondItem="jpl-MS-hyz" secondAttribute="trailing" constant="26" id="GlE-Hz-bPM"/>
+                            <constraint firstItem="rAK-TX-Ma5" firstAttribute="top" secondItem="jpl-MS-hyz" secondAttribute="bottom" constant="17" id="WFq-ad-VaL"/>
                             <constraint firstItem="os8-5X-BRa" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Xc6-Mx-yOh"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="os8-5X-BRa" secondAttribute="bottom" constant="315" id="fhA-4X-W7L"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="kj6-FF-eDx" secondAttribute="bottom" constant="148" id="efx-zs-Y7G"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="os8-5X-BRa" secondAttribute="bottom" constant="271" id="fhA-4X-W7L"/>
+                            <constraint firstItem="kj6-FF-eDx" firstAttribute="top" secondItem="rAK-TX-Ma5" secondAttribute="bottom" constant="44" id="glh-jl-o9D"/>
+                            <constraint firstItem="jpl-MS-hyz" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="kbS-du-oKD"/>
+                            <constraint firstItem="rAK-TX-Ma5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="1" id="tcz-4Q-Xda"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gamification" image="woman139" id="cPa-gy-q4n" userLabel="Gamification"/>
+                    <tabBarItem key="tabBarItem" title="Gamification" image="star" id="cPa-gy-q4n" userLabel="Gamification"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -573,7 +583,7 @@
         <scene sceneID="7N3-im-1AY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uQM-KB-qaU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Goals" image="crosshair14" id="or9-y2-c7h"/>
+                    <tabBarItem key="tabBarItem" title="Goals" image="fa-crosshair" id="or9-y2-c7h"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="EPe-cy-eTp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KL3-Wt-Won">
@@ -736,10 +746,10 @@
     </scenes>
     <resources>
         <image name="LaunchPicture" width="512" height="512"/>
-        <image name="crosshair14" width="32" height="32"/>
+        <image name="fa-crosshair" width="30" height="30"/>
         <image name="gear39" width="32" height="32"/>
         <image name="profile_picture" width="512" height="512"/>
-        <image name="woman139" width="32" height="32"/>
+        <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SP7-6I-W3t"/>

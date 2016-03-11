@@ -19,13 +19,13 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet var finishAddGoalButton: UINavigationItem!
     
     
-    var goals = [NSManagedObject]()
     
     // define some constants for avaiable frequency types and values
     let frequencyTypes = ["day","week","month"]
     let frequencyValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
     let dayInSeconds = Double(86400)
     var goalName = ""
+    var goalCategory = ""
     
     
     
@@ -75,28 +75,28 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
         let entity =  NSEntityDescription.entityForName("Goal",
             inManagedObjectContext:managedContext)
         
-        let goal = NSManagedObject(entity: entity!,
+        let goal = Goal(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         
         let frequency = Double(frequencyValues[self.frequencyValuePicker.selectedRowInComponent(0)])
         let frequencyType = "\(frequencyTypes[self.frequencyType.selectedSegmentIndex])"
         print("finish button pressed.")
         print("frequency: \(frequency) frequencyType: \(frequencyType)")
-        goal.setValue(goalName, forKey: "name")
-        goal.setValue(frequencyType, forKey: "frequencyType")
-        goal.setValue(frequency , forKey: "frequencyValue")
-        
-        goal.setValue(NSDate(), forKey: "nextDue")
+        //        create an instance of the Goal class (which is a subclass of NSManagedObject
+        goal.name = goalName
+        goal.category = goalCategory
+        goal.frequencyType = frequencyType
+        goal.frequencyValue = frequency
+        goal.nextDue = NSDate()
         
         do {
-            goals.append(goal)
             try managedContext.save()
             //
-            // dismiss the current view when finish is pressed
-            self.dismissViewControllerAnimated(true, completion: {})
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
+        // dismiss the current view when goal creation is completed
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
 }

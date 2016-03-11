@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Goal" syncable="YES">
-        <attribute name="achievedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="bestStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="currentStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="frequencyType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="frequencyValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="alreadyAchieved" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="bestStreak" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="currentStreak" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencyType" attributeType="String" syncable="YES"/>
+        <attribute name="frequencyValue" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
         <attribute name="lastAchieved" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="nextDue" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nextDue" attributeType="Date" syncable="YES"/>
+        <attribute name="totalAchieved" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goal" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

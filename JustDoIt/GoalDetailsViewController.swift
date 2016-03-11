@@ -39,7 +39,7 @@ class GoalDetailsViewController: UIViewController {
             frequencyType.text = String(goal.valueForKey("frequencyType")!) + "!"
             let bestStreak = goal.valueForKey("bestStreak")!
             statsLabel.text = "So far I have archieved this goal \(bestStreak) times"
-            let lastAchievedVal = goal.valueForKey("lastAchieved")
+            let lastAchievedVal = goal.valueForKey("nextDue")
             if lastAchievedVal != nil {
                 lastAchieved.text = String(lastAchievedVal!)
             }

@@ -15,13 +15,11 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var goalCategoryPicker: UIPickerView!
     
-    var goals = [NSManagedObject]()
-    
     // define some constants for avaiable frequency types and values
     let frequencyTypes = ["day","week","month"]
     let frequencyValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
     let dayInSeconds = Double(86400)
-    let goalCategories = ["Sport", "Household", "Social"]
+    let goalCategories = ["None", "Health", "Home", "Social", "Privat"]
     
     
     
@@ -44,14 +42,33 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    // return the corresponding array count for component 1 or 2 (frequency type or value)
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return goalCategories.count
     }
     
-    // return the corresponding array value for component 1 or 2 (frequency type or value)
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(goalCategories[row])"
+    
+    //    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    //        return "\(goalCategories[row])"
+    //        
+    //    }
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let category = goalCategories[row]
+        
+        let label = UILabel()
+        label.text = "the cat is: \(category)"
+        label.backgroundColor = UIColor.clearColor()
+        label.font = UIFont.boldSystemFontOfSize(15)
+        label.textColor = UIColor.blackColor()
+        
+        let image = UIImage(named: "\(category).png")
+        let imageView = UIImageView(image: image)
+        let rowView = UIView()
+        
+        //        rowView.addSubview(imageView)
+        rowView.addSubview(label)
+        return rowView
         
     }
     
@@ -67,7 +84,9 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         if segue.identifier == "AddGoalStep2" {
             //            get reference to GoalDetailsViewController
             let finishAddGoalViewController = segue.destinationViewController as! FinishAddGoalViewController
+            //            pass goal name and category to the next ViewController
             finishAddGoalViewController.goalName = goalNameTextField.text!
+            finishAddGoalViewController.goalCategory = goalCategories[goalCategoryPicker.selectedRowInComponent(0)]
         }
     }
     

@@ -22,6 +22,7 @@
 		1AAC099F1C8F384900D9C112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC099E1C8F384900D9C112 /* Assets.xcassets */; };
 		1AAC09A31C8F384900D9C112 /* JustDoItWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1AAC09851C8F384800D9C112 /* JustDoItWatch.app */; };
 		1AAC09AD1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */; };
+		1AB6C51E1C92EF7A001079E4 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6C51D1C92EF7A001079E4 /* Goal.swift */; };
 		1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB11711C216F3600DA3BBB /* AppDelegate.swift */; };
 		1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117A1C216F3700DA3BBB /* Assets.xcassets */; };
 		1ADB117E1C216F3700DA3BBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */; };
@@ -105,6 +106,7 @@
 		1AAC099E1C8F384900D9C112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AAC09A01C8F384900D9C112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishAddGoalsTableViewController.swift; sourceTree = "<group>"; };
+		1AB6C51D1C92EF7A001079E4 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		1ADB116E1C216F3600DA3BBB /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADB11711C216F3600DA3BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ADB117A1C216F3700DA3BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1AB6C51F1C92F0FA001079E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6C51D1C92EF7A001079E4 /* Goal.swift */,
+				1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1AB6C5201C92F107001079E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A98A5571C2F7716004EA4EC /* Main.storyboard */,
+				1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1AB6C5211C92F120001079E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
+				1A48AF291C5902A400D160CA /* GoalTableCell.swift */,
+				1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */,
+				1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */,
+				1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */,
+				1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		1ADB11651C216F3600DA3BBB = {
 			isa = PBXGroup;
 			children = (
@@ -214,15 +247,9 @@
 		1ADB11701C216F3600DA3BBB /* JustDoIt */ = {
 			isa = PBXGroup;
 			children = (
-				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
-				1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */,
-				1AAC09AC1C90AADF00D9C112 /* FinishAddGoalsTableViewController.swift */,
-				1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */,
-				1A48AF291C5902A400D160CA /* GoalTableCell.swift */,
-				1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */,
-				1A98A5571C2F7716004EA4EC /* Main.storyboard */,
-				1ADB117C1C216F3700DA3BBB /* LaunchScreen.storyboard */,
-				1A98A5541C2F7535004EA4EC /* Model.xcdatamodeld */,
+				1AB6C51F1C92F0FA001079E4 /* Model */,
+				1AB6C5201C92F107001079E4 /* View */,
+				1AB6C5211C92F120001079E4 /* Controller */,
 				1ADB117F1C216F3700DA3BBB /* Info.plist */,
 				1ADB117A1C216F3700DA3BBB /* Assets.xcassets */,
 			);
@@ -520,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB6C51E1C92EF7A001079E4 /* Goal.swift in Sources */,
 				1A48AF2A1C5902A400D160CA /* GoalTableCell.swift in Sources */,
 				1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */,
 				1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */,
@@ -839,6 +867,7 @@
 				1AAC09A71C8F384900D9C112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AAC09AA1C8F384900D9C112 /* Build configuration list for PBXNativeTarget "JustDoItWatch" */ = {
 			isa = XCConfigurationList;
@@ -847,6 +876,7 @@
 				1AAC09A51C8F384900D9C112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADB11691C216F3600DA3BBB /* Build configuration list for PBXProject "JustDoIt" */ = {
 			isa = XCConfigurationList;

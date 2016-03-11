@@ -103,7 +103,7 @@ class GoalsTableViewController : UITableViewController {
             
         }
         else if calendar.isDateInTomorrow(nextDue){
-            nextDueString = "Tomorrow"
+            nextDueString = "Tomorrow."
         }
         else if calendar.compareDate(nextDue, toDate: oneWeekAhead, toUnitGranularity: .Minute)  == NSComparisonResult.OrderedAscending{
             formatter.dateFormat = "EEEE"
@@ -111,7 +111,7 @@ class GoalsTableViewController : UITableViewController {
             
         }
         else {
-            formatter.dateFormat = "dd.MM at HH:MM"
+            formatter.dateFormat = "the dd.MM."
             
             nextDueString = formatter.stringFromDate(nextDue)
             print(nextDueString)
@@ -140,12 +140,17 @@ class GoalsTableViewController : UITableViewController {
     //#### EDIT ACTIONS FOR TABLE CELLS
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
+        //        Action to achieve a goal
         let archievedAction:UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal ,title: "Done") { (action, NSIndexPath) -> Void in
             
+            //            get the corresponding goal and its current values
             let goal = self.goals[indexPath.row]
             var currentStreak = (goal.valueForKey("currentStreak")! as! NSNumber).shortValue
+            var alreadyAchieved = (goal.valueForKey("alreadyAchieved")! as! NSNumber).shortValue
             let bestStreak = (goal.valueForKey("bestStreak")! as! NSNumber).shortValue
             print ("Current streak for this goal is \(currentStreak)")
+            
+            //            increment currentStreak, alreadyAchieved
             currentStreak++
             
             // set bestStreak to currentStreak if the value is now higher
@@ -186,6 +191,7 @@ class GoalsTableViewController : UITableViewController {
             let goal = self.goals[indexPath.row]
             //            reset the streak counter if the goal is skipped
             goal.setValue(NSNumber(short: Int16(0)), forKey: "currentStreak")
+            goal.setValue(NSNumber(short: Int16(0)), forKey: "achievedCount")
             self.saveChanges()
             print ("Goal skipped, streak counter set to 0.")
             self.tableView.reloadData()
