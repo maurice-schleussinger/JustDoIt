@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:JustDoIt/Goal+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:JustDoIt.xcodeproj">
    </FileRef>
    <FileRef

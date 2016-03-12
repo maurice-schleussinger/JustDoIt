@@ -21,7 +21,7 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
     
     
     // define some constants for avaiable frequency types and values
-    let frequencyTypes = ["day","week","month"]
+    let frequencyTypes = ["Day","Week","Month"]
     let frequencyValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
     let dayInSeconds = Double(86400)
     var goalName = ""
@@ -62,10 +62,6 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(sender)
-    }
-    
     
     @IBAction func finishAddGoalButtonPressed(sender: AnyObject) {
         let appDelegate =
@@ -80,14 +76,15 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
         
         let frequency = Double(frequencyValues[self.frequencyValuePicker.selectedRowInComponent(0)])
         let frequencyType = "\(frequencyTypes[self.frequencyType.selectedSegmentIndex])"
-        print("finish button pressed.")
+        print("Finish button pressed.")
         print("frequency: \(frequency) frequencyType: \(frequencyType)")
         //        create an instance of the Goal class (which is a subclass of NSManagedObject
         goal.name = goalName
         goal.category = goalCategory
         goal.frequencyType = frequencyType
         goal.frequencyValue = frequency
-        goal.nextDue = NSDate()
+        //        set new goals to be due in one hour
+        goal.nextDue = NSDate(timeIntervalSinceNow: 3600)
         
         do {
             try managedContext.save()
@@ -95,6 +92,17 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
+        //        #### NOTIFICATION ###
+        // add a notification for the new goal
+        let notification = UILocalNotification()
+        notification.alertBody = "You can start with '\(goal.name)' today!"
+        //        fire the notification in 1 hour
+        notification.fireDate = NSDate(timeIntervalSinceNow: 3600)
+        notification.userInfo = ["name": goal.name]
+        // play the default sound notification sound
+        notification.soundName =  UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
         // dismiss the current view when goal creation is completed
         self.dismissViewControllerAnimated(true, completion: {})
     }

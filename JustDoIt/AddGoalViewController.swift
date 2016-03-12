@@ -15,10 +15,8 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var goalCategoryPicker: UIPickerView!
     
+    @IBOutlet var cateogryImageView: UIImageView!
     // define some constants for avaiable frequency types and values
-    let frequencyTypes = ["day","week","month"]
-    let frequencyValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20]
-    let dayInSeconds = Double(86400)
     let goalCategories = ["None", "Health", "Home", "Social", "Privat"]
     
     
@@ -57,19 +55,14 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let category = goalCategories[row]
         
         let label = UILabel()
-        label.text = "the cat is: \(category)"
+        label.text = category
         label.backgroundColor = UIColor.clearColor()
         label.font = UIFont.boldSystemFontOfSize(15)
         label.textColor = UIColor.blackColor()
-        
-        let image = UIImage(named: "\(category).png")
-        let imageView = UIImageView(image: image)
-        let rowView = UIView()
-        
-        //        rowView.addSubview(imageView)
-        rowView.addSubview(label)
-        return rowView
-        
+        label.textAlignment = .Center
+        cateogryImageView.image = UIImage(named: "\(category).png")
+        cateogryImageView.tintColor = UIColor.greenColor()
+        return label
     }
     
     

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CoreData
+import AudioToolbox
+
 
 
 class GoalDetailsViewController: UIViewController {
@@ -22,16 +24,17 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet var lastAchieved: UILabel!
     @IBOutlet var frequencyType: UILabel!
     
+    @IBAction func secretButtonPressed(sender: AnyObject) {
+        print("secret button pressed")
+        if let soundURL = NSBundle.mainBundle().URLForResource("justdoit", withExtension: "caf") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundURL, &mySound)
+            // Play
+            AudioServicesPlaySystemSound(mySound);
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // test notifications
-        let notification = UILocalNotification()
-        notification.alertBody = "Todo Item  Is Overdue" // text that will be displayed in the notification
-        notification.alertAction = "ok" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-        notification.fireDate = NSDate(timeIntervalSinceNow: 30) // todo item due date (when notification will be fired)
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-        notification.category = "TODO_CATEGORY"
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
         if let goal = goal {
             goalNameLabel.text = String(goal.valueForKey("name")!)

@@ -15,5 +15,6 @@ class GoalTableCell: UITableViewCell {
     @IBOutlet var nextDueLabel: UILabel!
     @IBOutlet var streakProgressView: UIProgressView!
     @IBOutlet var streakCountLabel: UILabel!
+    @IBOutlet var categoryImageView: UIImageView!
     
 }

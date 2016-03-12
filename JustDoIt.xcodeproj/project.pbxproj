@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */; };
+		1A208EBA1C933339007C0E6E /* justdoit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A208EB91C933339007C0E6E /* justdoit.mp3 */; };
+		1A208EBC1C9334F8007C0E6E /* justdoit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1A208EBB1C9334F8007C0E6E /* justdoit.caf */; };
+		1A208EBE1C9383ED007C0E6E /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A208EBD1C9383ED007C0E6E /* DebugView.swift */; };
 		1A48AF2A1C5902A400D160CA /* GoalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A48AF291C5902A400D160CA /* GoalTableCell.swift */; };
 		1A4E4B311C5A3D2B00718D49 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */; };
 		1A5D72EC1C4E5D4100392F10 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */; };
@@ -89,6 +92,9 @@
 
 /* Begin PBXFileReference section */
 		1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
+		1A208EB91C933339007C0E6E /* justdoit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = justdoit.mp3; path = JustDoIt/justdoit.mp3; sourceTree = "<group>"; };
+		1A208EBB1C9334F8007C0E6E /* justdoit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = justdoit.caf; path = JustDoIt/justdoit.caf; sourceTree = "<group>"; };
+		1A208EBD1C9383ED007C0E6E /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1A48AF291C5902A400D160CA /* GoalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableCell.swift; sourceTree = "<group>"; };
 		1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		1A5D72EB1C4E5D4100392F10 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		1AB6C5211C92F120001079E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1A208EBD1C9383ED007C0E6E /* DebugView.swift */,
 				1ADB11711C216F3600DA3BBB /* AppDelegate.swift */,
 				1A48AF291C5902A400D160CA /* GoalTableCell.swift */,
 				1A4E4B301C5A3D2B00718D49 /* AddGoalViewController.swift */,
@@ -221,6 +228,8 @@
 		1ADB11651C216F3600DA3BBB = {
 			isa = PBXGroup;
 			children = (
+				1A208EBB1C9334F8007C0E6E /* justdoit.caf */,
+				1A208EB91C933339007C0E6E /* justdoit.mp3 */,
 				1ADB11701C216F3600DA3BBB /* JustDoIt */,
 				1ADB11871C216F3700DA3BBB /* JustDoItTests */,
 				1ADB11921C216F3700DA3BBB /* JustDoItUITests */,
@@ -462,9 +471,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A208EBA1C933339007C0E6E /* justdoit.mp3 in Resources */,
 				1A98A5591C2F7716004EA4EC /* Main.storyboard in Resources */,
 				1ADB117E1C216F3700DA3BBB /* LaunchScreen.storyboard in Resources */,
 				1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */,
+				1A208EBC1C9334F8007C0E6E /* justdoit.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +561,7 @@
 				1AB6C51E1C92EF7A001079E4 /* Goal.swift in Sources */,
 				1A48AF2A1C5902A400D160CA /* GoalTableCell.swift in Sources */,
 				1ADB11721C216F3600DA3BBB /* AppDelegate.swift in Sources */,
+				1A208EBE1C9383ED007C0E6E /* DebugView.swift in Sources */,
 				1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */,
 				1A4E4B311C5A3D2B00718D49 /* AddGoalViewController.swift in Sources */,
 				1A98A5561C2F7535004EA4EC /* Model.xcdatamodeld in Sources */,

@@ -15,7 +15,7 @@ class Goal: NSManagedObject {
     @NSManaged var category: String
     @NSManaged var frequencyType: String
     @NSManaged var frequencyValue: NSNumber
-    @NSManaged var alreadyAchieved: NSNumber
+    @NSManaged var currentProgress: NSNumber
     @NSManaged var totalAchieved: NSNumber
     
     @NSManaged var currentStreak: NSNumber
@@ -23,7 +23,6 @@ class Goal: NSManagedObject {
     
     @NSManaged var lastAchieved: NSDate?
     @NSManaged var nextDue: NSDate
-    //
     
     
 }
