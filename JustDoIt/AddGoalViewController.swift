@@ -1,10 +1,4 @@
-//
-//  AddGoalViewController.swift
-//  JustDoIt
-//
-//  Created by Some one on 27/12/15.
-//  Copyright © 2015 Some one. All rights reserved.
-//
+
 
 import UIKit
 import CoreData

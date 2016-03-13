@@ -1,10 +1,4 @@
-//
-//  DebugView.swift
-//  JustDoIt
-//
-//  Created by Some one on 11/03/16.
-//  Copyright © 2016 Some one. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -33,10 +27,13 @@ class DebugView: UIViewController {
             //            should not happen at all
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        output = output + String(goals.count) + "\n"
-        output = output + "######### Goals: #########\n" + String(goals) +  "\n######### local Notifications: #########\n"
+        output = output + String(goals.count) + "\n\n\n"
+        output = output + "######### Goals: #########\n" + String(goals) +  "\n\n\n\n######### local Notifications: #########\n"
         let localNotifications = UIApplication.sharedApplication().scheduledLocalNotifications!
         output = output + String(localNotifications)
+        output = output +  "\n\n\n\n######### standardUserDefaults: #########\n"
+            + String(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+        
         debugTextView.text = output
         debugTextView.textColor = UIColor.greenColor()
         debugTextView.backgroundColor = UIColor.blackColor()

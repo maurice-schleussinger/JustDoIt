@@ -1,10 +1,4 @@
-//
-//  AddGoalViewController.swift
-//  JustDoIt
-//
-//  Created by Some one on 27/12/15.
-//  Copyright © 2015 Some one. All rights reserved.
-//
+
 
 import UIKit
 import CoreData
@@ -76,15 +70,13 @@ class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIP
         
         let frequency = Double(frequencyValues[self.frequencyValuePicker.selectedRowInComponent(0)])
         let frequencyType = "\(frequencyTypes[self.frequencyType.selectedSegmentIndex])"
-        print("Finish button pressed.")
-        print("frequency: \(frequency) frequencyType: \(frequencyType)")
         //        create an instance of the Goal class (which is a subclass of NSManagedObject
         goal.name = goalName
         goal.category = goalCategory
         goal.frequencyType = frequencyType
         goal.frequencyValue = frequency
         //        set new goals to be due in one hour
-        goal.nextDue = NSDate(timeIntervalSinceNow: 3600)
+        goal.nextDue = NSDate(timeIntervalSinceNow: -36000)
         
         do {
             try managedContext.save()

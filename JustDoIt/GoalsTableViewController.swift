@@ -1,10 +1,4 @@
-//
-//  GoalsTableViewController.swift
-//  JustDoIt
-//
-//  Created by Some one on 19/01/16.
-//  Copyright © 2016 Some one. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -17,27 +11,79 @@ class GoalsTableViewController : UITableViewController {
     let reuseIdentifier = "GoalTableCell"
     var goals = [Goal]()
     
-    override func viewDidAppear(animated: Bool) {
-        //        get the appDelegate and create a local managedObjectContext
+    @IBAction func deleteButtonPressed(segue:UIStoryboardSegue){
+        //        unwind segue for GoalDetailsViewController
+    }
+    
+    func recheckAchievementStatus(){
+        var achievedAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("achievedAchievements") as! [String]
+        for category in ["None", "Home", "Health", "Privat", "Social"]{
+            //          check if the n'th achievement for the category has been achieved, if not check if it is achieved now
+            if !achievedAchievements.contains("\(category)1") {
+                let counter = NSUserDefaults.standardUserDefaults().integerForKey("counter\(category)")
+                if counter >= 10{
+                    achievedAchievements.append("\(category)1")
+                }
+            }
+            
+            //            check if the n'th achievement for the category has been achieved, if not check if it is achieved now
+            if !achievedAchievements.contains("\(category)2") {
+                let counter = NSUserDefaults.standardUserDefaults().integerForKey("counter\(category)")
+                if counter >= 50{
+                    achievedAchievements.append("\(category)2")
+                }
+            }
+            //            check if the n'th achievement for the category has been achieved, if not check if it is achieved now
+            if !achievedAchievements.contains("\(category)3") {
+                let counter = NSUserDefaults.standardUserDefaults().integerForKey("counter\(category)")
+                if counter >= 100{
+                    achievedAchievements.append("\(category)2")
+                }
+            }
+        }
+        //        save the possible changed array back into userDefaults
+        NSUserDefaults.standardUserDefaults().setObject(achievedAchievements, forKey: "achievedAchievements")
+    }
+    //    fetch goals from CoreData
+    func refetchData(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Goal")
+        let goalFetchRequest = NSFetchRequest(entityName: "Goal")
         let sortDescriptor = NSSortDescriptor(key: "nextDue", ascending: true)
-        let calendar = NSCalendar.currentCalendar()
-        
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
+        goalFetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            // try to get existing goals from the database
-            let results = try managedContext.executeFetchRequest(fetchRequest)
-            goals = results as! [Goal]
+            let resultsG = try managedContext.executeFetchRequest(goalFetchRequest)
+            goals = resultsG as! [Goal]
             self.tableView.reloadData()
-            
-            
         } catch let error as NSError {
             //            should not happen at all
             print("Could not fetch \(error), \(error.userInfo)")
         }
+    }
+    
+    //    reschedule an possibly existing notification for a given goal
+    func rescheduleNotification(goal:Goal){
+        //        delete the old notification
+        for notification in UIApplication.sharedApplication().scheduledLocalNotifications! {
+            if notification.userInfo!["name"] as! String == goal.name{
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
+            }
+        }
+        // add a notification for the next due date of the goal
+        let notification = UILocalNotification()
+        notification.alertBody = "'\(goal.name)' is due today!"
+        notification.fireDate = goal.nextDue
+        notification.userInfo = ["name": goal.name]
+        notification.soundName =  UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        //        initially get goals from CoreData
+        self.refetchData()
+        
+        let calendar = NSCalendar.currentCalendar()
+        
         //        check if an goal is overdue by more than 1 of his frequencyType
         for goal in goals{
             var intervall = Double()
@@ -48,6 +94,7 @@ class GoalsTableViewController : UITableViewController {
             switch goal.frequencyType {
             case "Day":
                 intervall = Double(dayInSeconds/goal.frequencyValue.doubleValue)
+                calendarUnit = NSCalendarUnit.Hour
             case "Week":
                 intervall = Double(dayInSeconds/goal.frequencyValue.doubleValue*7)
                 calendarUnit = NSCalendarUnit.Day
@@ -56,20 +103,12 @@ class GoalsTableViewController : UITableViewController {
                 calendarUnit = NSCalendarUnit.Day
             default: break
             }
-            print("intervall is \(intervall)")
+            //            check if the nextDue is smaller than the current time given it's frequencyType
             if calendar.compareDate(goal.nextDue, toDate: NSDate(timeIntervalSinceNow: intervall), toUnitGranularity: calendarUnit)  == NSComparisonResult.OrderedAscending{
-                for notification in UIApplication.sharedApplication().scheduledLocalNotifications! {
-                    // loop through
-                    if notification.userInfo != nil{
-                        if notification.userInfo!["name"] as! String == goal.name{
-                            
-                            
-                            //                            BREAK
-                            print("Overdue notification found for goal: \(goal.name)")
-                        }
-                        //                        UIApplication.sharedApplication().cancelLocalNotification(notification)
-                    }
-                }
+                goal.currentStreak = 0
+                goal.currentProgress = 0
+                goal.calculateNextDue()
+                self.rescheduleNotification(goal)
             }
         }
     }
@@ -80,26 +119,7 @@ class GoalsTableViewController : UITableViewController {
         super.viewDidLoad()
         
     }
-    // helper function to calculation the nextDue value for a given goal
-    func calculateNextDue(goal:Goal){
-        let dayInSeconds = Double(86400)
-        let frequency = goal.frequencyValue.doubleValue
-        let frequencyType = goal.frequencyType
-        var intervall = Double()
-        
-        //            calculate nextDue based on frequency and frequencyType
-        switch frequencyType {
-        case "Day":
-            intervall = Double(dayInSeconds/frequency)
-        case "Week":
-            intervall = Double(dayInSeconds/frequency*7)
-        case "Month":
-            intervall = Double(dayInSeconds/frequency*30)
-        default: break
-        }
-        goal.nextDue = NSDate(timeIntervalSinceNow: Double(intervall + (intervall * goal.currentProgress.doubleValue)))
-        
-    }
+    
     
     //    use prepareForeSegue to pass the calling Cell to the GoalDetailsViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -138,14 +158,27 @@ class GoalsTableViewController : UITableViewController {
         let calendar = NSCalendar.currentCalendar()
         //        set cell label to goal name
         cell.goalNameLabel.text = goal.name
+        cell.progressCounterLabel.text = "\(goal.currentProgress)/\(goal.frequencyValue)"
         cell.categoryImageView.image = UIImage(named: "\(goal.category).png")
+        if goal.category != "None"{
+            cell.categoryLabel.text = goal.category
+        }
         print("goal: \(goal)")
-        //        
-        if  !calendar.isDateInToday(goal.nextDue) {
-            cell.nextDueLabel.textColor = UIColor.lightGrayColor()
-            cell.goalNameLabel.textColor = UIColor.lightGrayColor()
-            cell.streakCountLabel.textColor = UIColor.lightGrayColor()
-            cell.streakProgressView.progressTintColor = UIColor.lightGrayColor()
+        //   render goal a little transparent if the goal is already finished for its given frequency
+        if  goal.currentProgress.intValue >= goal.frequencyValue.intValue  {
+            cell.streakCountLabel.alpha = 0.3
+            cell.nextDueLabel.alpha = 0.3
+            cell.goalNameLabel.alpha = 0.3
+            cell.streakProgressView.alpha = 0.3
+            cell.categoryImageView.alpha = 0.3
+            
+        }
+        else{
+            cell.streakCountLabel.alpha = 1
+            cell.nextDueLabel.alpha = 1
+            cell.goalNameLabel.alpha = 1
+            cell.streakProgressView.alpha = 1
+            cell.categoryImageView.alpha = 1
             
         }
         
@@ -167,24 +200,17 @@ class GoalsTableViewController : UITableViewController {
         }
         else if calendar.compareDate(goal.nextDue, toDate: oneWeekAhead, toUnitGranularity: .Minute)  == NSComparisonResult.OrderedAscending{
             formatter.dateFormat = "EEEE"
-            nextDueString = formatter.stringFromDate(goal.nextDue)
-            
+            nextDueString = formatter.stringFromDate(goal.nextDue) + "."
         }
         else {
             formatter.dateFormat = "dd.MM."
-            
             nextDueString = "the " + formatter.stringFromDate(goal.nextDue)
-            
         }
-        
-        
         
         cell.nextDueLabel.text = "Next due to \(nextDueString)"
         cell.streakCountLabel.text = String("Streak of \(goal.currentStreak)")
         let percentValue = (goal.currentStreak.floatValue/goal.bestStreak.floatValue)
-        print("  percentValue: \(percentValue)")
         cell.streakProgressView.setProgress(percentValue, animated: false)
-        
         
         return cell
     }
@@ -198,32 +224,38 @@ class GoalsTableViewController : UITableViewController {
             
             //            get the corresponding goal and its current values
             let goal = self.goals[indexPath.row]
-            //            increment currentStreak, alreadyAchieved
+            //            increment currentStreak, alreadyAchieved and currentProgress
             goal.currentStreak = NSNumber(int: goal.currentStreak.intValue + 1)
             goal.totalAchieved = NSNumber(int: goal.totalAchieved.intValue + 1)
             goal.currentProgress = NSNumber(int: goal.currentProgress.intValue + 1)
             
+            let globalBestStreak = NSUserDefaults.standardUserDefaults().integerForKey("globalBestStreak")
+            if goal.currentStreak.integerValue > globalBestStreak {
+                NSUserDefaults.standardUserDefaults().setInteger(goal.currentStreak.integerValue, forKey: "globalBestStreak")
+            }
+            
+            let totalAchieved = NSUserDefaults.standardUserDefaults().integerForKey("totalAchieved")
+            NSUserDefaults.standardUserDefaults().setInteger(totalAchieved + 1, forKey: "totalAchieved")
+            
+            let score = NSUserDefaults.standardUserDefaults().integerForKey("score")
+            NSUserDefaults.standardUserDefaults().setInteger(score + 10, forKey: "score")
             // set bestStreak to currentStreak if the value is now higher
             if goal.currentStreak.intValue > goal.bestStreak.intValue {
                 goal.bestStreak = goal.currentStreak
                 
             }
             goal.lastAchieved = NSDate()
-            self.calculateNextDue(goal)
+            goal.calculateNextDue()
             
             self.saveChanges()
-            
-            // add a notification for the next due date of the goal
-            let notification = UILocalNotification()
-            notification.alertBody = "'\(goal.name)' is due today!"
-            notification.fireDate = goal.nextDue
-            notification.userInfo = ["name": goal.name]
-            notification.soundName =  UILocalNotificationDefaultSoundName // play default sound
-            //        TODO: whats this?
-            notification.category = "TODO_CATEGORY"
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            
+            self.rescheduleNotification(goal)
+            //            update achievement counter
+            let oldCounter = NSUserDefaults.standardUserDefaults().integerForKey("counter\(goal.category)")
+            NSUserDefaults.standardUserDefaults().setInteger(oldCounter + 1 , forKey: "counter\(goal.category)")
+            self.recheckAchievementStatus()
             print ("Goal archieved, streak counter incremented by +1.")
+            //            refetch data to reapply correct sorting
+            self.refetchData()
             self.tableView.reloadData()
             
         }
@@ -234,12 +266,14 @@ class GoalsTableViewController : UITableViewController {
             // maybe ask the user before breaking the streak
             let goal = self.goals[indexPath.row]
             //            reset the streak counter if the goal is skipped
-            goal.currentProgress = NSNumber(int: goal.currentProgress.intValue + 1)
+            goal.currentProgress = 0
             goal.currentStreak = 0
-            self.calculateNextDue(goal)
-            
+            goal.calculateNextDue()
             self.saveChanges()
+            self.rescheduleNotification(goal)
             print ("Goal skipped, streak counter set to 0.")
+            //            refetch data to reapply correct sorting
+            self.refetchData()
             self.tableView.reloadData()
             
             

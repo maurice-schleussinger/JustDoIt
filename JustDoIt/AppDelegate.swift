@@ -1,11 +1,4 @@
 
-//
-//  AppDelegate.swift
-//  JustDoIt
-//
-//  Created by Some one on 16/12/15.
-//  Copyright © 2015 Some one. All rights reserved.
-//
 
 import UIKit
 import CoreData
@@ -15,12 +8,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //        check if app is launched for the first time
+        if NSUserDefaults.standardUserDefaults().objectForKey("registeredSince") == nil  {
+            // init some general settings for the gamification (no CoreData since we would ever have only 1 instance)
+            NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: "registeredSince")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "globalBestStreak")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "totalAchieved")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "score")
+            NSUserDefaults.standardUserDefaults().setObject([], forKey: "achievedAchievements")
+            // init counter for the specific achievement categories
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "counterNone")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "counterHome")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "counterHealth")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "counterPrivat")
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "counterSocial")
+            
+            
+        }
         // Override point for customization after application launch.
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))  // types are UIUserNotificationType members
         
         return true
+    }
+    //    Invoke AddGoalViewController on Force Touch Action
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        //        we only have one action, so we dont need to check the shortcutItem value
+        let rootViewController = window!.rootViewController!
+        // instantiate the AddGoalViewController with the storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("add_goal") as! UINavigationController
+        rootViewController.presentViewController(vc, animated: true, completion: nil)
+        //        notify OS the action was successful
+        completionHandler(true)
+        
+        
     }
     
     func applicationWillResignActive(application: UIApplication) {

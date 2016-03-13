@@ -1,10 +1,3 @@
-//
-//  GoalDetailsViewController.swift
-//  JustDoIt
-//
-//  Created by Some one on 04/01/16.
-//  Copyright © 2016 Some one. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -14,7 +7,7 @@ import AudioToolbox
 
 
 class GoalDetailsViewController: UIViewController {
-    var goal: NSManagedObject!
+    var goal: Goal!
     
     @IBOutlet var goalNameLabel: UILabel!
     
@@ -24,15 +17,25 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet var lastAchieved: UILabel!
     @IBOutlet var frequencyType: UILabel!
     
-    @IBAction func secretButtonPressed(sender: AnyObject) {
-        print("secret button pressed")
-        if let soundURL = NSBundle.mainBundle().URLForResource("justdoit", withExtension: "caf") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(soundURL, &mySound)
-            // Play
-            AudioServicesPlaySystemSound(mySound);
+    @IBAction func deleteGoalButtonPressed(sender: AnyObject) {
+        //        delete goal on button press
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        managedContext.deleteObject(goal)
+        do {
+            try managedContext.save()
+        } catch {
         }
+        
+        //also delete the possibly existing notification for the goal
+        for notification in UIApplication.sharedApplication().scheduledLocalNotifications! {
+            if notification.userInfo!["name"] as! String == goal.name{
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
+            }
+        }
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
