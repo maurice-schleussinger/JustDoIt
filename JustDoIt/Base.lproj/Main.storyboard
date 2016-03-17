@@ -129,7 +129,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTR-fa-pNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="-2088"/>
+            <point key="canvasLocation" x="1125" y="-1684"/>
         </scene>
         <!--Goal Details View Controller-->
         <scene sceneID="p1c-Fa-F0t">
@@ -257,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tva-1a-Te4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="otb-cX-Kea" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3177" y="-2088"/>
+            <point key="canvasLocation" x="1969" y="-1684"/>
         </scene>
         <!--Finish Add Goal View Controller-->
         <scene sceneID="WjQ-7r-clh">
@@ -292,7 +292,7 @@
                                     <constraint firstAttribute="height" constant="21" id="FJx-LO-Ypl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="times a " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3m-mM-6Zn">
@@ -301,7 +301,7 @@
                                     <constraint firstAttribute="height" constant="21" id="7qY-im-G9e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhW-Wm-vJe">
@@ -342,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuH-nl-L2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5375" y="-1277"/>
+            <point key="canvasLocation" x="3287" y="-2441"/>
         </scene>
         <!--Gamification-->
         <scene sceneID="wg7-f3-ORb">
@@ -363,7 +363,7 @@
                                     <segue destination="0Br-QN-eje" kind="show" id="X5q-Ql-477"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh9-KK-lXk">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh9-KK-lXk">
                                 <rect key="frame" x="459" y="72" width="121" height="30"/>
                                 <state key="normal" title="Show DebugView"/>
                                 <connections>
@@ -386,7 +386,7 @@
                                     <constraint firstAttribute="width" constant="176" id="dBC-t7-Wv0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have reached a total of 100 goals." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsT-Tc-tKL">
@@ -396,7 +396,7 @@
                                     <constraint firstAttribute="height" constant="21" id="sol-wv-2bn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You got 5 out of 100 Achievements." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb1-fP-XMy">
@@ -406,13 +406,13 @@
                                     <constraint firstAttribute="height" constant="21" id="rcy-RR-Goh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-TX-Ma5">
-                                <rect key="frame" x="497" y="156" width="83" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-TX-Ma5">
+                                <rect key="frame" x="441" y="156" width="139" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="Kss-o9-ojX"/>
+                                    <constraint firstAttribute="width" constant="139" id="Kss-o9-ojX"/>
                                     <constraint firstAttribute="height" constant="21" id="XLp-DF-C9G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -425,7 +425,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Jcy-3z-uTI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -464,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-653"/>
+            <point key="canvasLocation" x="1125" y="-853"/>
         </scene>
         <!--Achievements Collection View Controller-->
         <scene sceneID="5I8-iZ-x9t">
@@ -526,7 +526,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKu-hQ-oQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="117"/>
+            <point key="canvasLocation" x="1969" y="-853"/>
         </scene>
         <!--Debug View-->
         <scene sceneID="fYM-yH-0Tz">
@@ -562,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egL-w0-Q6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615" y="-461"/>
+            <point key="canvasLocation" x="1131" y="983"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -582,7 +582,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="-653"/>
+            <point key="canvasLocation" x="-441" y="-1285"/>
         </scene>
         <!--Goals-->
         <scene sceneID="7N3-im-1AY">
@@ -603,7 +603,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNG-q4-k14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69" y="-2088"/>
+            <point key="canvasLocation" x="337" y="-1684"/>
         </scene>
         <!--Add goal-->
         <scene sceneID="9HR-9B-8mb">
@@ -626,7 +626,7 @@
                                     <constraint firstAttribute="width" secondItem="d3V-VW-osb" secondAttribute="height" multiplier="29:5" id="wOC-rC-mSC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfq-dq-ZjM">
                                 <rect key="frame" x="265" y="110" width="70" height="21"/>
@@ -655,7 +655,7 @@
                                     <constraint firstAttribute="width" constant="205" id="Fvj-NO-Yn4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -698,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptc-Kw-9T3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4563" y="-1277"/>
+            <point key="canvasLocation" x="2559" y="-2441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Nu-a3-mUX">
@@ -716,7 +716,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bop-CI-0Ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3745" y="-1277"/>
+            <point key="canvasLocation" x="1781" y="-2433"/>
         </scene>
         <!--Gamification-->
         <scene sceneID="v0f-Gh-3XK">
@@ -735,7 +735,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqI-ge-h0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="313" y="-653"/>
+            <point key="canvasLocation" x="337" y="-853"/>
         </scene>
     </scenes>
     <resources>

@@ -2,6 +2,7 @@
 
 import Foundation
 import UIKit
+
 class AchievementCollectionCell: UICollectionViewCell{
     
     @IBOutlet var CellImage: UIImageView!

@@ -2,7 +2,7 @@
 
 import UIKit
 import CoreData
-import AVFoundation
+
 
 class FinishAddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     

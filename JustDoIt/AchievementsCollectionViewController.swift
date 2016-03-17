@@ -54,7 +54,6 @@ class AchievementsCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //        TODO: open View with details
     }
     
     

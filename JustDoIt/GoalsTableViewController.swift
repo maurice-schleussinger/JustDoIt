@@ -3,7 +3,6 @@
 import Foundation
 import UIKit
 import CoreData
-import AVFoundation
 
 
 class GoalsTableViewController : UITableViewController {
@@ -112,15 +111,12 @@ class GoalsTableViewController : UITableViewController {
             }
         }
     }
-    
     override func viewDidLoad() {
         
         //        call parent function
         super.viewDidLoad()
         
     }
-    
-    
     //    use prepareForeSegue to pass the calling Cell to the GoalDetailsViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //        check if the correct segue is called
@@ -228,15 +224,13 @@ class GoalsTableViewController : UITableViewController {
             goal.currentStreak = NSNumber(int: goal.currentStreak.intValue + 1)
             goal.totalAchieved = NSNumber(int: goal.totalAchieved.intValue + 1)
             goal.currentProgress = NSNumber(int: goal.currentProgress.intValue + 1)
-            
+            //            check if we have to change values for the global achievement counters
             let globalBestStreak = NSUserDefaults.standardUserDefaults().integerForKey("globalBestStreak")
             if goal.currentStreak.integerValue > globalBestStreak {
                 NSUserDefaults.standardUserDefaults().setInteger(goal.currentStreak.integerValue, forKey: "globalBestStreak")
             }
-            
             let totalAchieved = NSUserDefaults.standardUserDefaults().integerForKey("totalAchieved")
             NSUserDefaults.standardUserDefaults().setInteger(totalAchieved + 1, forKey: "totalAchieved")
-            
             let score = NSUserDefaults.standardUserDefaults().integerForKey("score")
             NSUserDefaults.standardUserDefaults().setInteger(score + 10, forKey: "score")
             // set bestStreak to currentStreak if the value is now higher

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A027EEF1C3AE45800808298 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */; };
-		1A208EBA1C933339007C0E6E /* justdoit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A208EB91C933339007C0E6E /* justdoit.mp3 */; };
-		1A208EBC1C9334F8007C0E6E /* justdoit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1A208EBB1C9334F8007C0E6E /* justdoit.caf */; };
 		1A208EBE1C9383ED007C0E6E /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A208EBD1C9383ED007C0E6E /* DebugView.swift */; };
 		1A393EE11C94D78500B49D93 /* AchievementsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A393EE01C94D78500B49D93 /* AchievementsCollectionViewController.swift */; };
 		1A393EE31C94D9A800B49D93 /* AchievementCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A393EE21C94D9A800B49D93 /* AchievementCollectionCell.swift */; };
@@ -95,8 +93,6 @@
 
 /* Begin PBXFileReference section */
 		1A027EEE1C3AE45800808298 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
-		1A208EB91C933339007C0E6E /* justdoit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = justdoit.mp3; path = JustDoIt/justdoit.mp3; sourceTree = "<group>"; };
-		1A208EBB1C9334F8007C0E6E /* justdoit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = justdoit.caf; path = JustDoIt/justdoit.caf; sourceTree = "<group>"; };
 		1A208EBD1C9383ED007C0E6E /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		1A393EE01C94D78500B49D93 /* AchievementsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsCollectionViewController.swift; sourceTree = "<group>"; };
 		1A393EE21C94D9A800B49D93 /* AchievementCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCollectionCell.swift; sourceTree = "<group>"; };
@@ -237,8 +233,6 @@
 		1ADB11651C216F3600DA3BBB = {
 			isa = PBXGroup;
 			children = (
-				1A208EBB1C9334F8007C0E6E /* justdoit.caf */,
-				1A208EB91C933339007C0E6E /* justdoit.mp3 */,
 				1ADB11701C216F3600DA3BBB /* JustDoIt */,
 				1ADB11871C216F3700DA3BBB /* JustDoItTests */,
 				1ADB11921C216F3700DA3BBB /* JustDoItUITests */,
@@ -480,11 +474,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A208EBA1C933339007C0E6E /* justdoit.mp3 in Resources */,
 				1A98A5591C2F7716004EA4EC /* Main.storyboard in Resources */,
 				1ADB117E1C216F3700DA3BBB /* LaunchScreen.storyboard in Resources */,
 				1ADB117B1C216F3700DA3BBB /* Assets.xcassets in Resources */,
-				1A208EBC1C9334F8007C0E6E /* justdoit.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

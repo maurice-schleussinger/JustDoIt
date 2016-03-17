@@ -2,7 +2,6 @@
 
 import UIKit
 import CoreData
-import AVFoundation
 
 class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {    
     @IBOutlet var goalNameTextField: UITextField!
@@ -38,12 +37,6 @@ class AddGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return goalCategories.count
     }
-    
-    
-    //    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    //        return "\(goalCategories[row])"
-    //        
-    //    }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
         let category = goalCategories[row]

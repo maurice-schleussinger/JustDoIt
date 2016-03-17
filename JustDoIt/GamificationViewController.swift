@@ -1,6 +1,6 @@
 
 import Foundation
-import CoreAudioKit
+import UIKit
 
 class GamificationViewController: UIViewController {
     
@@ -22,7 +22,7 @@ class GamificationViewController: UIViewController {
             "Grand Achiever"]
         let levels = [100, 200, 400, 600, 800, 1500]
         
-        let globalBestStreak = NSUserDefaults.standardUserDefaults().integerForKey("globalBestStreak")
+        let achievedAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("achievedAchievements") as! [String]
         let totalAchieved = NSUserDefaults.standardUserDefaults().integerForKey("totalAchieved")
         let score = NSUserDefaults.standardUserDefaults().integerForKey("score")
         var level = 0
@@ -33,8 +33,7 @@ class GamificationViewController: UIViewController {
         self.totalAchievedLabel.text = "You have reached a total of \(totalAchieved) goals. \nGreat job!"
         self.TitleLabel.text = titles[level]
         self.PointsLabel.text = "\(score) Points"
-        //        TODO count achievements
-        self.achievementCounterLabel.text = "You got \(0) out of 12 Achievements."
+        self.achievementCounterLabel.text = "You got \(achievedAchievements.count) out of 12 Achievements."
         
     }
 }
