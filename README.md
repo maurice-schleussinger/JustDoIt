@@ -2,7 +2,7 @@
 
 iOS Habbit tracking app with gamification aspects in Swift
 
-#Note:# very simple implementation of some basic features. Feel free to fork and use this project
+**Very simple implementation of some basic features.**
 
 
 ## Features ##
